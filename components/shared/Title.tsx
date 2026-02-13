@@ -28,7 +28,7 @@ const mapClassNameBySize = {
   "2xl": "text-[48px]",
 } as const;
 
-export default function Title({ size = "sm", text, className }: Props) {
+export const Title = ({ size = "sm", text, className }: Props) => {
   const Tag = mapTagBySize[size as TitleSize];
   return (
     <Tag
@@ -37,4 +37,4 @@ export default function Title({ size = "sm", text, className }: Props) {
       {text}
     </Tag>
   );
-}
+};

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Categories, Container, Sort } from "./index";
 import { cn } from "@/lib/utils";
-export default function TopBar() {
+export const TopBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -24,4 +24,4 @@ export default function TopBar() {
       </Container>
     </div>
   );
-}
+};

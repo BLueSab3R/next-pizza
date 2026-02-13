@@ -10,13 +10,13 @@ type Props = {
   onValueChange?: (values: number[]) => void;
 };
 
-export default function RangeSlider({
+export const RangeSlider = ({
   min,
   max,
   step,
   value,
   onValueChange,
-}: Props) {
+}: Props) => {
   return (
     <div>
       <Slider
@@ -34,4 +34,4 @@ export default function RangeSlider({
       </div>
     </div>
   );
-}
+};

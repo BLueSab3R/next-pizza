@@ -1,9 +1,9 @@
-export { default as Header } from "./Header";
-export { default as Container } from "./Container";
-export { default as Title } from "./Title";
-export { default as Categories } from "./Categories";
-export { default as Sort } from "./Sort";
-export { default as TopBar } from "./TopBar";
-export { default as FilterCheckBox } from "./FilterCheckBox";
-export { default as Filters } from "./Filters";
-export { default as RangeSlider } from "./RangeSlider";
+export { Header } from "./Header";
+export { Container } from "./Container";
+export { Title } from "./Title";
+export { Categories } from "./Categories";
+export { Sort } from "./Sort";
+export { TopBar } from "./TopBar";
+export { FilterCheckBox } from "./FilterCheckBox";
+export { Filters } from "./Filters";
+export { RangeSlider } from "./RangeSlider";

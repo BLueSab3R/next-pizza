@@ -9,13 +9,13 @@ export interface Props {
   checked?: boolean;
 }
 
-export default function FilterCheckBox({
+export const FilterCheckBox = ({
   text,
   value,
   endAdornment,
   onCheckedChange,
   checked,
-}: Props) {
+}: Props) => {
   return (
     <div className="flex items-center space-x-2">
       <Checkbox
@@ -34,4 +34,4 @@ export default function FilterCheckBox({
       {endAdornment}
     </div>
   );
-}
+};

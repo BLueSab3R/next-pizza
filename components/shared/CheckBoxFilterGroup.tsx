@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function CheckBoxFilterGroup() {
+export const CheckBoxFilterGroup = () => {
   return <div></div>;
-}
+};

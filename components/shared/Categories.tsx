@@ -16,7 +16,7 @@ const categories = [
   "Desserts",
 ];
 
-export default function Categories({ className }: Props) {
+export const Categories = ({ className }: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -41,4 +41,4 @@ export default function Categories({ className }: Props) {
       ))}
     </div>
   );
-}
+};

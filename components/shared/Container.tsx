@@ -4,10 +4,10 @@ interface Props {
   className?: string;
 }
 
-export default function Container({ children, className }: Props) {
+export const Container = ({ children, className }: Props) => {
   return (
     <div className={cn("mx-auto max-w-[1280px] px-4", className)}>
       {children}
     </div>
   );
-}
+};

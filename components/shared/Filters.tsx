@@ -8,7 +8,7 @@ interface Props {
   className?: string;
 }
 
-export default function Filters({ className }: Props) {
+export const Filters = ({ className }: Props) => {
   const [prices, setPrices] = useState([0, 500]);
 
   return (
@@ -40,4 +40,4 @@ export default function Filters({ className }: Props) {
       </div>
     </div>
   );
-}
+};

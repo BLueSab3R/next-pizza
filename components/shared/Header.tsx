@@ -9,7 +9,7 @@ interface Props {
   className?: string;
 }
 
-export default function Header({ className }: Props) {
+export const Header = ({ className }: Props) => {
   return (
     <div className="border border-b">
       <Container className="flex items-center justify-between py-8">
@@ -45,4 +45,4 @@ export default function Header({ className }: Props) {
       </Container>
     </div>
   );
-}
+};
