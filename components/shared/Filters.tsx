@@ -1,7 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { FilterCheckBox, Title, RangeSlider } from "./index";
+import {
+  FilterCheckBox,
+  Title,
+  RangeSlider,
+  CheckBoxFilterGroup,
+} from "./index";
 import { Input } from "../ui";
 
 interface Props {
@@ -38,6 +43,38 @@ export const Filters = ({ className }: Props) => {
           value={prices}
         />
       </div>
+      <CheckBoxFilterGroup
+        title="Ingredients"
+        className="mt-5"
+        limit={6}
+        items={[
+          { text: "Tomato", value: "1" },
+          { text: "Cheese", value: "2" },
+          { text: "Pepperoni", value: "3" },
+          { text: "Mushrooms", value: "4" },
+          { text: "Onions", value: "5" },
+          { text: "Olives", value: "6" },
+          { text: "Bacon", value: "7" },
+          { text: "Pineapple", value: "8" },
+          { text: "Spinach", value: "9" },
+          { text: "Ham", value: "10" },
+          { text: "Sausage", value: "11" },
+          { text: "Peppers", value: "12" },
+          { text: "Chicken", value: "13" },
+          { text: "Beef", value: "14" },
+          { text: "Anchovies", value: "15" },
+        ]}
+        defaultItems={[
+          { text: "Tomato", value: "1" },
+          { text: "Cheese", value: "2" },
+          { text: "Pepperoni", value: "3" },
+          { text: "Mushrooms", value: "4" },
+          { text: "Onions", value: "5" },
+          { text: "Olives", value: "6" },
+          { text: "Bacon", value: "7" },
+          { text: "Pineapple", value: "8" },
+        ]}
+      />
     </div>
   );
 };
