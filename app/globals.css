@@ -107,9 +107,9 @@
 
   --primary-foreground: oklch(0.985 0 0);
 
-  --secondary: oklch(0.97 0 0);
+  --secondary: rgba(255, 250, 244, 1);
 
-  --secondary-foreground: oklch(0.205 0 0);
+  --secondary-foreground: rgba(254, 95, 0, 1);
 
   --muted: oklch(0.97 0 0);
 
@@ -173,7 +173,7 @@
 
   --secondary: oklch(0.269 0 0);
 
-  --secondary-foreground: oklch(0.985 0 0);
+  --secondary-foreground: rgba(254, 95, 0, 1);
 
   --muted: oklch(0.269 0 0);
 
