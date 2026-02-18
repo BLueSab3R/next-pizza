@@ -1,7 +1,10 @@
-import React from "react";
+"use client";
+
+import React, { use, useEffect, useRef } from "react";
 import { Title } from "./Title";
 import { cn } from "@/lib/utils";
 import { ProductCard } from "./ProductCard";
+import { useIntersection } from "./hooks/useIntersection";
 
 type ProductItem = {
   price: number;
@@ -27,8 +30,15 @@ export const ProductGroupList = ({
   className,
   categoryId,
 }: Props) => {
+  const intersectionRef = useRef<HTMLDivElement>(null);
+  const intersection = useIntersection(intersectionRef);
+  useEffect(() => {
+    if (intersection?.isIntersecting) {
+      alert(`Активна категорія:${title}, ID:${categoryId}`);
+    }
+  }, [intersection?.isIntersecting, title, categoryId]);
   return (
-    <div className={className}>
+    <div className={className} id={title} ref={intersectionRef}>
       <Title text={title} size="lg" className="mb-6" />
       <div className={cn("grid grid-cols-3 gap-12.5", listClassName)}>
         {items.map((item) => (
