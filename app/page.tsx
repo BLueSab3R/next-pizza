@@ -100,7 +100,7 @@ export default function Home() {
               />
 
               <ProductGroupList
-                title="Breakfast"
+                title="Combos"
                 categoryId={2}
                 items={[
                   {
