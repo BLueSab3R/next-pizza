@@ -1,23 +1,29 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React, { useState } from "react";
+import { useState } from "react";
+import { useCategoryStore } from "@/store/category";
 
 interface Props {
   className?: string;
 }
 
 const categories = [
-  "Pizzas",
-  "Combos",
-  "Snacks",
-  "Cocktails",
-  "Coffee",
-  "Drinks",
-  "Desserts",
+  { id: 1, name: "Pizzas" },
+  { id: 2, name: "Combos" },
+  { id: 3, name: "Snacks" },
+  { id: 4, name: "Cocktails" },
+  { id: 5, name: "Coffee" },
+  { id: 6, name: "Drinks" },
+  { id: 7, name: "Desserts" },
 ];
 
 export const Categories = ({ className }: Props) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const activeCategoryId = useCategoryStore((state) => state.activeId);
+  const setActiveCategoryId = useCategoryStore((state) => state.setActiveId);
+
+  const handleCategoryClick = (categoryId: number) => {
+    setActiveCategoryId(categoryId);
+  };
 
   return (
     <div
@@ -26,18 +32,19 @@ export const Categories = ({ className }: Props) => {
         className,
       )}
     >
-      {categories.map((category, index) => (
-        <button
-          onClick={() => setActiveIndex(index)}
+      {categories.map(({ name, id }) => (
+        <a
+          onClick={() => handleCategoryClick(id)}
           className={cn(
             "flex items-center font-bold  h-11 rounded-2xl px-5 cursor-pointer",
-            activeIndex === index &&
+            activeCategoryId === id &&
               "bg-white shadow-md shadow-gray-200 text-primary",
           )}
-          key={index}
+          key={id}
+          href={`/#${name}`}
         >
-          {category}
-        </button>
+          {name}
+        </a>
       ))}
     </div>
   );
