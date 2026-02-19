@@ -8,9 +8,8 @@ export const useIntersection = (ref: RefObject<HTMLElement | null>) => {
     if (!ref.current) return;
 
     const observer = new IntersectionObserver(
-      (entry) => {
-        const entrySec = entry[0];
-        setIntersection(entrySec);
+      ([entry]) => {
+        setIntersection(entry);
       },
       { threshold: 0.4 },
     );
