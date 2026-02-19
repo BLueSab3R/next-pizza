@@ -9,7 +9,7 @@ export default function Home() {
       </Container>
       <TopBar />
       <Container className="mt-9 pb-12">
-        <div className="flex gap-12">
+        <div className="flex gap-20">
           <div className="w-62.5">
             <Filters />
           </div>
@@ -23,7 +23,157 @@ export default function Home() {
                     id: 1,
                     name: "Pizza Margherita",
                     imageUrl:
-                      "https://www.dominos.co.in//files/items/Pizza_Margherita.jpg",
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+                    items: [
+                      {
+                        price: 5.99,
+                      },
+                    ],
+                  },
+                  {
+                    id: 2,
+                    name: "Pizza Margherita",
+                    imageUrl:
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+                    items: [
+                      {
+                        price: 5.99,
+                      },
+                    ],
+                  },
+                  {
+                    id: 3,
+                    name: "Pizza Margherita",
+                    imageUrl:
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+                    items: [
+                      {
+                        price: 5.99,
+                      },
+                    ],
+                  },
+                  {
+                    id: 4,
+                    name: "Pizza Margherita",
+                    imageUrl:
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+                    items: [
+                      {
+                        price: 5.99,
+                      },
+                    ],
+                  },
+                  {
+                    id: 5,
+                    name: "Pizza Margherita",
+                    imageUrl:
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+                    items: [
+                      {
+                        price: 5.99,
+                      },
+                    ],
+                  },
+                  {
+                    id: 6,
+                    name: "Pizza Margherita",
+                    imageUrl:
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+                    items: [
+                      {
+                        price: 5.99,
+                      },
+                    ],
+                  },
+                  {
+                    id: 7,
+                    name: "Pizza Margherita",
+                    imageUrl:
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+                    items: [
+                      {
+                        price: 5.99,
+                      },
+                    ],
+                  },
+                ]}
+              />
+
+              <ProductGroupList
+                title="Breakfast"
+                categoryId={2}
+                items={[
+                  {
+                    id: 8,
+                    name: "Pizza Margherita",
+                    imageUrl:
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+                    items: [
+                      {
+                        price: 5.99,
+                      },
+                    ],
+                  },
+                  {
+                    id: 9,
+                    name: "Pizza Margherita",
+                    imageUrl:
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+                    items: [
+                      {
+                        price: 5.99,
+                      },
+                    ],
+                  },
+                  {
+                    id: 10,
+                    name: "Pizza Margherita",
+                    imageUrl:
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+                    items: [
+                      {
+                        price: 5.99,
+                      },
+                    ],
+                  },
+                  {
+                    id: 11,
+                    name: "Pizza Margherita",
+                    imageUrl:
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+                    items: [
+                      {
+                        price: 5.99,
+                      },
+                    ],
+                  },
+                  {
+                    id: 12,
+                    name: "Pizza Margherita",
+                    imageUrl:
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+                    items: [
+                      {
+                        price: 5.99,
+                      },
+                    ],
+                  },
+                  {
+                    id: 13,
+                    name: "Pizza Margherita",
+                    imageUrl:
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+                    items: [
+                      {
+                        price: 5.99,
+                      },
+                    ],
+                  },
+                  {
+                    id: 14,
+                    name: "Pizza Margherita",
+                    imageUrl:
+                      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
                     items: [
                       {
                         price: 5.99,

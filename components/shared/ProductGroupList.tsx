@@ -5,6 +5,19 @@ import { Title } from "./Title";
 import { cn } from "@/lib/utils";
 import { ProductCard } from "./ProductCard";
 import { useIntersection } from "./hooks/useIntersection";
+type CartItem = {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  imageUrl?: string;
+  size?: 20 | 30 | 40;
+};
+type Cart = {
+  items: CartItem[];
+  totalSum: number;
+  status: "idle" | "loading" | "error" | "success";
+};
 
 type ProductItem = {
   price: number;
@@ -34,7 +47,7 @@ export const ProductGroupList = ({
   const intersection = useIntersection(intersectionRef);
   useEffect(() => {
     if (intersection?.isIntersecting) {
-      alert(`Активна категорія:${title}, ID:${categoryId}`);
+      alert(`Active category:${title}, ID:${categoryId}`);
     }
   }, [intersection?.isIntersecting, title, categoryId]);
   return (
