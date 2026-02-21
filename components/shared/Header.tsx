@@ -12,7 +12,7 @@ interface Props {
 export const Header = ({ className }: Props) => {
   return (
     <div className="border border-b">
-      <Container className="flex items-center justify-between py-8">
+      <Container className="flex items-center justify-between py-6">
         <div className="flex items-center gap-4">
           <Image src="/logo1.png" alt="logo" width={96} height={96} />
           <div className="">
