@@ -1,11 +1,9 @@
 import prisma from "@/prisma/prisma-client";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
   try {
     const users = await prisma.user.findMany();
-
-    console.log(users);
 
     return NextResponse.json({
       users: users,
@@ -17,4 +15,14 @@ export async function GET() {
       { status: 500 },
     );
   }
+}
+
+export async function POST(req: NextRequest) {
+  const data = await req.json();
+
+  const user = await prisma.user.create({
+    data,
+  });
+
+  return NextResponse.json(user);
 }
