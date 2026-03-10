@@ -10,123 +10,144 @@ export const categories = [
 
 export const ingredients = [
   {
-    name: "Pepperoni Lovers",
-    price: 109,
+    name: "Pepperonikorv (fläsk)",
+    price: 3,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/4/FA35B15078575E1B43939C02B7EAC9E0D/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAADWElEQVQ4jZWU7U+TZxTG+wdoMnHBkS3ELG4wIyFGXDqtb8hahmGbdOIHFWHSOd1mYnRmLnNz6JYlix82SRZmsmzLFr9otkyRMrQwrMqr0BWkhRYKbamFjgIF+pT2eX5LW6QvVo1XcnKf3Dn3dc55nnMuGSkgSdKiPS1kCUSJrA+RP0jwuESy+KpSETzJwoieUV8W9ZMCeRjJ9+F3qRLIFoPjTRSRQsGIiYIfccqD6JtECs7H7BEdyZK/hySGCHlcBO614u9uZrb1b3y6y8x1NhGwGBF62hD6OgmOj0aI4xFmilYoioR8kwRcNvyDvczoLjHx/Qk8Xx/EXaXBWaVhtPoU92u+xH3uKGPnTzJx5RdmjC0INhNBjwsxIMRaDvm8TN3R4vr5GxzVn2KvqmT4cCGO91QMa1T0l2/DfCAfc7kC095XGajcivXjXQydfR/H+ZN4tBcJjDlihAH7AKM1p+k/9Dp95Ru4q86lpSibu2/nYlDnYSzJxbo7F7N6NfqCTG4qX6RLnYNx91ruHdiC/ccq5kYs8YQWnBfO8q8mn1tvraZOkcFf65bR8Fo6t/Iz6XkzC/vePPrUOdTJ07mSl4Z+eybdxdkMlMkZu3AawTG48FMWWv6v+Srdn1dSX7yGaxtX0LQ5g46iLHrfWctQ6RqGd72CcccqmhUraJSnod/8HJ3KlVgrNuL9/VuC7pEYoeSfYab9OtYzGlrVObQoX8BQ/DKWiu04PyrBvk9O/xvP0731WdoVabRvWk77lnS6dqzC+tk+JvW1BMNjtUjom2C2/ldsRwq5rVyJVpFBo+olTJUqXMf2YHu3AIMyk9vypejWLUG3/hn0inQMZQpcl2rwu52IoVBihUJXE67vjtNxsIiG/YU0f1iK+cQeRo6UYC4roE2VhW5TBlplNvU75dzcr8R07hOmezsQw4NO3GBH59DLbL+BcX0do/9ouX+nEfefPzF8qoKesnzaSjfQ9sFODNVfYbr8GyM3avH2GZj3TaXalIWL8KoFBMR5IXL6nYN46i5iq/6CwR/O4Gr4g2n7EIJvmqAgIIqhJKF4UGF00xPXSJIircx7x5mzW/A7bQTD1YhiQhxJqrNI+ChpSsaT5CyhwlT+4y0xURgxwohWPK24xr+N4n/U/m4/b4/YVAAAAABJRU5ErkJggg==",
   },
   {
-    name: "Pulled Beef BBQ",
-    price: 119,
+    name: "Pepperonikorv (Halal)",
+    price: 2,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAADUklEQVQ4jZWU7U+TZxSH+xcYY+ackGVGMzHMyUycCoYVgRhw1pDBGDDBmakxM9uY0xjjWzKyuBCTfWBxy8wWjWZxSvYBpqFLifLWSUe0kgqVYmmLHQUBS5+W8rxeS1s6Ci1GT/J7cufkPNc5ue9zjo4FpmnaPL2s6RbQUkIXUzw2CRhxJQYkKSFmMag2e9alClxomqrElOhbJIGOFBBNElGDftTAJPL4CNKwA+WpFzUUQBX8qCEBTZGTEkdMF2dpqoomS6jTQSSnjVDrdYTmX/E3XmDyWgNTpkaEzpsIf/1OsOMmousRSnAKTZxBU5SECiMwWUIccSHcb8ff8ScTv33P2Nm9jB4tw3uklKEjH+I6+ynuUzUMHyvD+81+fJfqmTBeI9BtYmbYgSqGYxVGPvLkKBO3ruD+9hDOExUMHC7GvmcbgzV6HDV59FVuZaBqE/3lG7CWZNJbuYn+gwU8+sKAs+4g46ZGpKnJOaDodfLvxTr6D+TxoDyLjh2rMeWm01GwGsvODGwlb+Gq2oitZB3Gba/Rqk+nx5BB7wfrcRwu4mnzpflAeWKUsabLWL8uw2TIpCn7VW69u4y299LoKVqDozQTT9VGrLsyaNnyCsbNyzDnv06vIQPP50UEWq6iCP7oy8faZiaM8KALe30tbaXv0JafTk/xGvoqsxnal4+nIotBwyqshWnczV0eVXfeSqyGtXhOVxPsNqKGQ9G5iAHDAtNdTbhOlGPZ9Sbt29Ow7FzL4IFifF9V4KrOwVa4EkvOEro2L8GcvRSLfgW2fXpGbvxEeMSDqsixV44CpwXC5maenPkYc0kWzTsyMZVuxf7Zbry15ThqCvincBW3tyylJXsFRv0bdO7ewMC5LxH676PK0lzbRAYr0qSyz43/zh84f6nH9uN32C834P7hNK7aMmyVufz9/tu0f5RD59FPsJw7Tt/F84yZTUhTz2J9/D8wPjaKghIMII77mJlVwNqF9+c67MereXhyP4+vNOC7dxe/e4jQ+CjydCg2EImjFx27VGtK01BCAUKPH/KsuxW/1UzY9wRFElOEavFTQoWLSVFQJTF6LfHkz9s4uufuu4VL4wX24yww/u+LLdZk0Fxi3exmm+dMvMe5ShMhyaFx4H99HniWy8f+owAAAABJRU5ErkJggg==",
   },
   {
-    name: "Vesuvio",
-    price: 119,
+    name: "Kycklingkebab",
+    price: 3,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/74/B3B1A320DAB652FDBCE346B348D1C042D/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACeElEQVQ4ja3U+09SYRjAcf7JNPICpieFGYSKutbFLls/5CpXlk6dieJEATHNqFYJw+Fm5lpNlwo6UVEiRY4XrufbYKUGNLT1bO85Z+/7ns97e86RkSMkSUqXfwlZvg5nhWW5gMzyt/a8oPSrUy40E8oDSqfG8q1AljlqvgPJB8sysVQk4zGiYojDUJCDH1uIfh97AT/RvTDJRCILP/ksy2pIJNjbXGXF9Yr5sX7mR3uZ7X/GzEAniw4726teontiGs47w3jkEHFjGc87KxP36xm/KmC/UYWlRsGAVoH9rp5pYzuLjtcEvd+I7ovZM/xdkcKCS3PMvejD0dyIVSNnSH2OYV0xRrWcXpUcs07JsL6CsSYdUz1PWP88fYT+ASZiMbZXlpgd7Ga8SYettowhVSFmdQG2WgUWfTnmegGTrozeyvP0CgVY6ipwd7Xgm5lEDPjTRnrJqUtqs72u94zebqCn8gKDWiUWbSkWbQlmXQoUGL2uYbhRzYBGiVFVhLFKjq1BYLLtHstTDg7F8DEYO9jH63Ziu9XI86pizPWXMOsFhuoEDOoiOssLMF4uw1wjYKpWYKwqwqguwqovZ+LRTTyutxyKu8dgMh7nu2eBaZOBD20PcHa2YH94B2tTHYYrF2mvKKRDkGNQlWJUldBfrWTkmgZnWzPzb0YIeheIRyPHYGofU6mw41shuOIhsLyI56ObTy+HcZu6mex5irPrMc6uVlxdrUz1dfB13Mr6lxnEYCCNSVIyO22kZPLoHotE2A+F0i+Et9bZ9fvY3VgjtLFGOLDJQWgnnRnSia/q6JQzK88SUq7E/p8lC8wc9bR/m6MZnml9p4ifnwu3civSIa0AAAAASUVORK5CYII=",
   },
   {
-    name: "Kebab Lovers",
-    price: 109,
+    name: "Skinka",
+    price: 3,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/64/CA4905E2C540DE2F5425DBDC0C85F6B2D/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAACBklEQVQ4jc3TWW/aQBAA4Pz/5760qKUJhXDJnDa2MZBCg6CHVAWEQoHQBFrMsV7f2Os9KjetSl1FpcpL52m10rczOzt7wh4RJ/8nppQRwjBmlByHKf2xwJi4Dta2eKtS1/61/yAmmPo+3bvUsvBm7U3G9oee87aDpiNiQkZw5IgDTDAxdbSYe9NrfzTw3/WddsuQecClYCnlXr3HUKPePrxFFFNKXdubjcyOZDSrtsLbkuA0ZEviN6n46sUTKJad4RW6uyWGEZZwgCkjOACq2b8AlTTgc5DndKHsNOtWXQBcZpdPwWrRUGSn3wuWC+r79/V/x5RSHCB1YbyRAZ+HchnWq4ZSsy8UUxFhhQPpV7t0ApwnjEoRzaYMHeKwtyHW29KmkNyW0kAomE3RbEiGIppyDWRTavz5OvYUJM+86xFD6PfMAfKXc9jk1dypmo5vsqe7YmZTyECx4rxu2IqoFzg9lzFrVTSfsSCCw8xLs9uAQh7y+R2XXCZiy7MYKGctqbRviV676fc6wXhAdC3SsNATy/DGH/dd2b2sa43Kl0z8a+LZLvvSKJ27lwoaD8jqjlo6w8Gf70wZRkRT8c0QzYbOp4Heb0GJM4S821WC2wmxdBb4kTk9nDDKAp+6Ft1bxLUDbe1/HvuTIV4tqOceMZ4sMqpeyH6251/w/Sd5gB2B/xaPwt8Ahd1mti4Jey0AAAAASUVORK5CYII=",
   },
   {
-    name: "Bacon BBQ",
-    price: 119,
+    name: "Fajitakyckling",
+    price: 2,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/49/AB88BEFAE90C3AC856B9E4E4639695C3D/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACp0lEQVQ4ja2UWU8TYRSG+3vQG73BKxONRr0yMSS4RSXRxLhEFpcbIxGCgjeAIihowAgIBAiiNVAEBJElLEIVCggILWWAFujGdNrp9DHTClIYqIm+yeSbmcw85/3O+c7R8Z+l2/wiGAyur1rXxm+iAoPqTzvA/gaqi3QTea+laFCd1hZBXRUUyY3smsfvFAiIToIBOapT3ZZ8qc8BGdlhxW1qQmgpwKzPYf5zJR7LKIrft6NTXQRMCaD4PPjskzgGqpkqS6T7/lE+Je+n/8FpLE0leJesIfebnUYCf0dRvCt4zT0stBfy/cUVDLcP8ubsLmoT9tCdfoLRqjSEQQPikhVF9ocAwU3gdYeqM+9sP7OGbNozT/LqQiy5x2N4HrcbfdIB+nPPM1CSgrEmi9lePZJjUaWhDZS9iHPfMDfl0ZoRz7P4vWQdi6HgVCy1iYfpeBhHf8El+l7e4Gv5XSaai3ELkwQVZcMxW9syEPA6sA++pzf/GlVXD1F0Zh8V14/QnHmO7twEhoouYyy9hbH0DiM16fxsf43TMoziF9UKhnK65jYEVLe7MtHLaH0+XflJdGZfZKg4BVN1Kqaym4yVJzNWl8ZwdRqmylRmDHnYh/S4pntZFUbwOQUU2bcxhwqy5MEjjGMbeMtcWwlCZxmzbYVM1KQxVnmPqYYcJhsf86M2A3P9IyyNT5hqeMp0azHL41+QRdcf4JrUXPocc3htZsSFCZZGPmJuq8DS9Q7bcAs2o56FvhqWBhtYHGhkuqOOmZ4POGaGCUhiGBhZeiWcaLXqsg/JucCq3YrkduAXnUgOAe+yBb9nGb/oRnI7kTwuZJ8UzmO4KNq9q3Vow4c/HFBLwVBRtpsomj0eGUxrCum2a/ZoI2zb4bBdT2prbRKFVy1tmdj/ql8VSdWbG/Q/QgAAAABJRU5ErkJggg==",
   },
   {
-    name: "Capricciosa",
-    price: 119,
+    name: "Biffkebab",
+    price: 2,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/50/1BE86216256A7B00CD2F2FE33FABFEC3D/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAADCElEQVQ4jZ2U6UtUYRSH5x+JCGsy54MVhX0wSnPJ0naLDLIGlaDVcklzwZZhKmdalSgqtEhbBLNyqVCsjLSyotRSy5jSJjOXGRtnu/eJuTnNTN5B6AcH7r289znnfd/fOQpkJIqiFP8jhRzMG+ovvNf6Bf4Lk9NkUAVMXPA3BAHR6UBwhcOO4LQjisIEqEvud4X0UaYyp8POsNFAX8cLetua6X37lP6uV1iGjFICt0Rpved/hTuJT5WCwLDxC8/vlFJ1fA/VhTupKdzOw6J03tVdYdDwHof1158diL5nq+AfkNU8zI+edt7WlXE9X82ZxFDOqRdSvGUB+k3zuZi6ikclWr68fsTYyID0z8Qtj8NMA9/oenKXZyUa7mmSuZASjm79HI6tm83BFUFkRc8gZ3kQp9Vh3D+TgeFVIzaLWR5oHxvlU3Md9Sd3UZu3lhupMeji53AkVsmxNUHkxSjJjAhgf5SSnGWBXNgWxctbRZgH+uSBVvMQXQ3lPDiSQNXecErVIRyOCSA3cir6eBXa1Sqyo5Xsjw4kK2omJzaG0FB8gP7uNzhsY39v31OhxUzPs2pqtUlc3hqCLk5J9uIppC+eimalCl18MPnLZ5EZqSQ7KhDtunlUFCTRUV+Bqb8Xwen0BdpGR+h+XMntgkROb5hLfmQAmWHTSAsL4ECMiqNr53IwTkXakulkRCjRbgylsjCND001mAeMCIJTso8XcJjPT+9Qr9/BxaRFaGIDpSiIDZKAroo0q4NJi5hBdlwwl9ITaK2+yojRIHl2whk67VZGvnbysbGCxuIsbmasoWz3Us4nh6FdH4I+YQGnNodSqI7mUm4KTeVn+dbegt1i8jG5xzaiKLWXy1s/Olv53FTF+9oSWq7pqNbvo+JQCjVFOTRXldLd+oSfhk6spkGpa3yMLY73sncWF9jVCTbzEKP9BowdLfS8eMj3T21YTIM47TZE4c8luOV+lip0Q2WnjChKx+HyqU8P+5k8isnmnt9J5GeMeYB+Mk+eSGYeusMzyvxX5V2NnH4DpJB8FrN/G/oAAAAASUVORK5CYII=",
   },
   {
-    name: "Hawaii",
-    price: 119,
+    name: "Nötkött",
+    price: 2,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/51/06C4BCAE82160D4BD47E119D83B5CE76D/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB30lEQVQ4je2SW08aURRG+YFNY9qESE2I9UKLtKjE69CHpkYxJja0oIgkgxcyRhNvtZZoEOVBhXiJBC0aWyvWGmGYGRmYmcNwzhkjoEQfakyfTLre19473/5Uyj+g+i8XwXkUjBUFKw8KDEEoA5AV0tIFI/EclLP5KX+VcR6Uy6Xo+HFk6/uqL7w4GfF/OY3uCBwNc1mE0PU5t2UEIRCEDMckYz/2/F/n+7s8HSb3O4PnvXHRaTkIzNFH0UTsiD49EfgUgrAkI4RSyfjP7WDENxuacHqtZg9RNdBYYTNW2A3l7iat92P7GtW3POpYplwHG6tiOlXYr8IY57LgeHd7YbBnqtM4+UFPES9Jk2awQeN4q/70+pm9Tu1u0noInbulmmzX+cdJ5vysEGRJ/uawjBLVZLPW1aix6Z/31pT1Vj2x1j61G9QD9S/sb8qterWzVbcyTbF0vCgXz2YS0VDAP+aa6use6zGT5rrPDZU2U+WQ+RXVUU91tw13tg1ZiPkR5+FeWJLEq+RKgSEopvnEn9+xw/3oVjDonV6aGFmZHQ8tzGz65sLrgd2N4P7O5lnslygIBfPunzHGECIAJJ5l2MQ5xyR5juUvWDGTAQDIsowQuqckNz+/4f6SKA/nkcqXOj1GKr68pIEAAAAASUVORK5CYII=",
   },
   {
-    name: "Spicy Hot",
-    price: 119,
+    name: "Bacon",
+    price: 2,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/66/3D1F3C63638740958A3E59275C056424D/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACkklEQVQ4ja2U+0vTURjG9991oZ+CKImk1DA1S6R0hgmFFloh6kKwiLz8YFFGZhdNuplFbE5n6TadOjfn3d3c3L7XT2xzVzdT6MDL9xy+5zzv877nOY+G/zw0qQtVVfeNQwGqkQPxYH/gzCRqSrIoYObPbIyiaQ4EqGYDi80VSUQRwqiylKwgR3vY/WriWxJA0bmCvO0jaJ7Epx8h7JhD8btR/B5k7xaiZxM5GEBVlOTZOMPMTIoQQlh34TOMsPSomYXGWtb7uggaRwj8Gsb9rhf30Ct2bOYoexIVxhmmAooCgnOOrcE+HG31mLWlTFeXsvCgjtWeVpZba1moysfZqMX7eQDBZY8yV8VwguUuYIy2vO1me+wbrvYmZq5dZLqyCOvt68w33mDxnhZ7TQG2stPYb1Ww0tmKZ7ifkNkUbUUaYLQPioywvoTn6wCOtgbMFReYKs/HUn0Ja1Uhtppi7HVXcNypwdlSj1PXwGrvYwKTBuSAP1FlomQ54CNoGWftTQ+25ptMlORhOHMcY94xxs4eYbzgJNaqMpY7Wth88ZTN5x14vrwlvLKEKknJHsbZiRsufPpPrH14hr1Hxx9tMYZTR9HnnWDi6nlMlUVMV5ez/KQN/8eXBEffIyxaYrKKXXUKoKog+d3s2C0E5qbw/tbj7NQxWXIO0+VC5tubcHbrcHY9ZO11N/6fg4RtJuTIhahJ6ezKZldHiowihlFEASngx234wazuPpbmu7j6e9kaHcJj/I7fbGTHMYPk20SVxD0C18SknD4ighW8HnyzVryWKQJOO6GNFUSfGykUjCaOENjz9NRMHR7QDDKfX0bJB7SqlPea1RzUHIDxDYdinOo2/zTQnHaVfX+aY+cCTIt/jL9pQd2mLpLK8AAAAABJRU5ErkJggg==",
   },
   {
-    name: "Supreme",
-    price: 129,
+    name: "Soltorkade tomater",
+    price: 1,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/67/DFE86A18F45E5EC9FB44E31B70F42E8CD/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACzElEQVQ4ja2U/UtTYRTH/RfqN8siRfMlW7aKhWaKVgbm6peiMCr6IaKMiH6KkoQQpB8ysDAr0jAwgqD3F5FYLQwRX3JqOct825xvuTm3ud3n3k9sc5f5UgzywOE+3Ofczznnud/zRLHMFrXUS0VR1OdCn9uIHKj8A6Z6KG4J8DxgKNgfqK7D9/+RKGRRgSx/q8TrRR6zIYYGkH9PokiS+qEKUsIqDlW4VDZFlhF9vbhrqnCUFmOvvY+7owURAPuCMWGth9ZR6pmEZ/b5kEYsOOseYjucz2BuKv3Hcxi6VsT4ozu4mj4jxkdRhLQIGgT6XQgUlxMx3I+npZGpx9UMnTtJT1YanbsS6D6YxPfDGsyFO+m/cJzJ2nv4fpoD1YZDgy37vIiBXrwNz3FWXWf0chF9p4/QWZBFmy6F5swkGncn0pwXT5c+iW96DeajexmvKkfq/wGyCGsZkB1TeF7WMXX+CCMHMujdtYW2nK0YdRv4mBjDl+QYPmjW8kYXR+O+VLoPpdGdv4HewjzsTx4gT42pxxVoWbJPYn9aw/DBbMya1bQnreJT4hqexUZTF72C12tWYlgfzauN63iRmYxRr6Fdn4IpN5nBiydwtzYGW1fmzlByu7A3G/l16SwdWVqatMkYdGk8z9BRrdtKjTaFt5sT+JiWwNtN8bzaFothRxxt6fH0HdvPdMMb5FlPUDZ+oCwEnvFRxgz1/Lx1k+6yUjrLb9BWWYmxooJ3JcXUnzqBsWAPn9O1GLQJfNmeSJc+G0tZCa4uE/KcRtW/7Id6nU5mbDamhy1MW0dwWG1MDgwy3NGBuf49pvt3+Xr1CqYLZ/hx6Twj927jaG3B55xRNawCVaGGCVb2i1sSSLOzeBzTOKxWJnp6mGhvx95lwm21ILk9gbhFwEhdFsEkQoh5IGWRsCP00OwvnH9Cslk47P/j6uUQiUUCm1fhctkftCmfR9D+XAgAAAAASUVORK5CYII=",
   },
   {
-    name: "Al Tonno",
-    price: 109,
+    name: "Rödlök",
+    price: 1,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/2728/B14EF84B051E716B7BC775BC7B800353D/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACy0lEQVQ4ja2U60/TUByG+Zf9YOI3Q9DE+IUPJposaowIROL9SoQho06BTraxshu7r+vudveurO1j2tFdCN4ST3LSpj3nOe/vct4F/vNYcF8sy5o8/3VyvncMdD/+CsZ08eyYwDjnOa8WCxdhv9poGSamYWKZ7kEXodY05DlFpoV5NmLU1znrauidAcNWn+GPHnp7wKg3xNBHWKY5HzZjjqPQnbYCvd2nW2zQSij8kIo0IwWaxwXUuEK30KSvqAyqbecwez3MQ6chmybDVg81IVM5SKIIMUq7J5R8UZQvcWqHaWpHWWrBLI1IgXa2xrA1GKdhRtRE4UjT6eSqVMQkJX8Uee8EeVcaw8QM5f0k6Q8iiRd+ctshyoEUrUwNvaM5YiYhT9SpPZoxmUogRVk8pRxIonyNo/jiVPczyEIUadXL97tviT0TyO9J1I7z9BSVkXY2VWgDzZFBr6LSiBYpi2mUgyTVSNaB59+Fyb0Jk90MEXm0jbj8iuiGQF44oRrO0c7Vz1XOVNmuakeuUwnZSmLkPoVRxBR1qUjufRjp3g6S5zPHHi9hzxbpzSBKIEU1kkfN2LnsO201BRqGAywIEslX+0gPvcTX/RR9MdKvAxwuPUe4usr35Q8knh8i+5OUAxnKwSxqtorenVHoxm5XWBHjSKs7fLu5wd61FcTbbwje+cjX6+t4r9xHWHxK6P4OiZci2W0J5ShDu9RkNJzJods2Th5rKvJBnOMnXoSldXavPca/uMH+rRd8ubGBb3GNvaWnHN79yOlWiHq6jNaZb52JQrfael+jXWqghFKcbopIaz7CD3YIerY58nwitPKZU2+IRqaC1tUwDGO+Dy+7x9Z5Xoe9AZ1Sk3pMdipaj8q0ig20dh/jzJjea8ud7k25zJJmzMEOyQbYabn4z5pY2Gxj/8nv5v3nN2tnDPayU//JZCcG+4fx98rHwJ+7U+odPP0D5wAAAABJRU5ErkJggg==",
   },
   {
-    name: "Spicy Tuna",
-    price: 119,
+    name: "Ananas",
+    price: 1,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/2735/010CB95433472B6E286C351D5D060C2ED/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAACNElEQVQ4jc2TzUtUURjG/R+E+hPa9BeUgYuIPgjdtXAntAjamNEHUaBDhrjzgyDUWuSihkpCMEoNE5TIlMZvdHTG+XC81zt3rvdj7j33nOeJKyq6GAla1MtZnHfxO895nnPeKv5FVf1fMPZWpfYkWBEhKQ8YRQgiiDYnwiA8hlsMUhQFSovKpbIoNhmsUxqErAQjUgiSsD7CfAvrM5xJeHMo/4IzCnuY5WmGBcpSdGh0ERzCiEREmvYotE5V6EChA/l26P0ovlFGH4x+WIOwx2FP0JmiyEZKRNW+pr/GUpx6D7RubHcj3YSl60jeRL4N+RjyT6F1QX8B7Tn1l3RnqbwDWPm0fzDfxtx9aj00BpiNYeEaluqYfchcjLlW5p8x14rUHWZi3J06CgewEsi0M3Wb2RZu91LrxeZjbNxippnZJ8y0RHzqnpxrCBfvKvM7VWQ78gwo5aZlulMmrsqZi3KhUSUfqfQDtXJDztbI6XNyplYlrsj5Bj/R7K/2yd3kXvL7noFADzdfeZOXnC9nnZHz7sRld6rWGTtjDp4uxqtL76vtoVPutxpvpVOYyyr0jqUN6Yqdn85ilznZpI82ap/qteGa7aELmcG6VLw+E7+89aFWH2tw1t9J3yRw/J2hlHBDO+dpC9bGuDE/sDPbZcy/Nle/FlcnjOWR4tJQaW2kbCRV6Ff4YZF9KYOycI3A3hJeUQpfhkIGfuh7oe8pKQ5lK08VoiCOzMNeewQ7Ef6z+nfwb0VqWm5bGfeRAAAAAElFTkSuQmCC",
   },
   {
-    name: "Kycklingcurry",
-    price: 119,
+    name: "Champinjoner",
+    price: 1,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/2759/9A5B433C6590C366E8830130B246AAF4D/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAACbklEQVQ4jc3TW28SQRQH8H5jX/wAPqiJMWobEFRqkRYsgS2XAotcFlyhXBaw0JZ2GynXwi7LpUvZXXZ2ZwZDqU0bbaLxQf+Zl5nklzOTOWdl/hdZ+c8wvsrNZrF+B2OEoKoAWdRVCUMN6SpUJQhkBAGCOkZwPsf3YIyhKkv95kXzYNqvqSIv9evj5r54Xp0K9YnQlidDqGu/xBhDoIrcqFbkDqg+m+JPc41iuJYmOqVQpxytlWLdb2VFEm9e9ANjjKGmKRfi+clZxl/yGoo+YyVmz/osOcLEJhyn9HaFcrKFuNCtA1VZ+iXGGOpgOp5wtdZBKucxBV89II0P93ZMlH0tbH6Ud69VIh8YcjMXdlaZxFjoQqjP5/gaI02RhRbPMke0L00YacfztPMlE7Ckdszxjafp7dV8yJp0vyWtL9K7W70Gq2vqHF9hBPXZ5WDcPGoUqQK5ld3dOE75q0l3idzI+sx7HlM+aEsHbBGHIbj+LBPY6jVOgDrDGK9gjHWgiHyje5xnMyEmbC9FXexe6DDuKkfs+cB7mjBnSDvttUYdBsr5mom6OrWjmSwhhBaVoQamY15osa0qwzLU4ZdQIeigt41Zn4UhbTRhTvmtCbclsrmacL1hYkT7Nl4U18BMupwM+e5ZtZIMxG0Gv+lxYP0J5VxLuIwJ4l3cZYl8NCW9tnImJnAdTQOLa9/uLaDOxCFX28/mSXfSY0t4rJlPzjzlLXwOFOhwMRWtfs322nVFkW9/1XUQQhpQp+Jo0Gtz7TrXaQhce9DvDgVuNODHI2F6KQKg/tQkd0cCIQQhRMtgtDy8Mst1z2D8Uf4d/g7JR0QpCA1SegAAAABJRU5ErkJggg==",
   },
   {
-    name: "Roasted Garlic",
-    price: 119,
+    name: "Paprika",
+    price: 1,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/73/F5170E07210B4715AB031152D45569F8D/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAADbklEQVQ4jZWU7W+TVRjG938ogsAGBDZIMI5k+zSlxuAHXDBxOp1EiR9wKlEZxMQvZkERJerAzSiEibgX9gKMpYURNrYOOkbbsa1b23Vzo3t51tK3tWufPi8/Y9eXtWUYz8md8+TknOu+rvu5z5XDk4aqxhc1KxL7a42cDKSVw08AWivIAE8CphhkXIrN1eSfDpyTYpV+OE4YdTmE4ppH8S6iRsNpcrPKoKrkrN5IZVOQlRCh4Az+4duEms4gttYhP7yDIkyhhvyoipwst7oKIyc7k0I4IiAIXdhHfmKkuRLH5xo8H2oIn6xEbPoeaaADRZhEFVcYx2ZsJZ2hJEcIBGdwTrZg6T7CUEc5+guv0XN8O7a3c/GV7SF0aC/h6grEtp+RraZYSVarSwJGpSCL3gfYrHU4tJVMXyplpP11dI0lXP8xF/PxDbjf2kRQs5ml0gKCR/YTaaxDmZ9N64qYZFmJ4vYbGXFU8/Duu8w0HcBe/ypdfxbT/vsuus8XMFa7k8dHdxAoz2euogDLR3uw1n6GxzEYu59WQ1FaYkq4gsFyCOPdAxgv70N3ppDWr3LRV+Vh+/YFnN8V4asqJvBFEeMndnL5VB4X6zUYhmvwhqZQVTkFGJXDzHsGGLJW099bSk/zbnp+WM/gJ+twlOfy6M3NOMu24H4/H3/1DhwN62lr2ci5Tg2dpqNMCDpEKRjvw7j2SMSL23GV6RvvMH1tNwvNG5it2chEVR6j7z2L+YNnmPp6E77m7Qi9WxjUF3LL+Cnd4ycYdjYQEt0rgInfrcoykvUeYuMxoh0HifS9wsLNfIbqt3H/9PMYap/D1LaV6f5inOYizCYNfaNV9NlOMzZ/jWXRmwGoKigOC9KFU0RrPiZyaT8u3YsMdRZibNnK8JV19Ot2oe/fR69hL+29L9FmOIxh4iKCfxxJEVOAMdmA4vMg6W8R+fUk4W/KCPxSzEJ7CU7dy1i0JXRp3+Bqz2H+un2QczcruGE6y9xjO1FZTO/DZHPLMkoggGQbR7zeQPj8l0RajxG8V8Pf5j/oG/gNreEs2vu16EdbcbrsRKVUy6SeXmIj8a0oyF4v0qQdaXKMqGuOUMCLyzPH7KIDwfOIpWUfsixlGUqa5DQvTCRR/o2ECaRiLcdJmkO24/wPk82UnPS+p1j/f0bcsf8B2BOOhfauKB8AAAAASUVORK5CYII=",
   },
   {
-    name: "Chicken Supreme",
-    price: 129,
+    name: "Mozzarella",
+    price: 1,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/63/02F8CA2D0F18FA88748D76F92B429927D/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqUlEQVQ4ja2U228SQRSH+Ut988k37YOxqZpovFUTDWpTkyqGJmq9JBpFrVGxF3vx0ooVWAQWKCJQYBcW2GXZ2c8wVG23RWviJCc7s3v2m9/JnN/4+M/D93vqguvi7iFk9ubTO3y7Jf5LeOF9hR7YX8cf4D652LKLXAsH4XQQXRPh2Aini9O1ZAjhDKxmR8l9WBfH0ujUVdrVOJaextQzNDfiGJUEZqOIbdYl3FuN67peoIPoaNh6jGZ+Gj19j0Y2hK6GKEdvsaE8QMuG0b8t0qylsC1DqneFGKDQMXFaOazyPIZ6Gy0+hpYIUI0FKLw7T+HdKKXIGOVogI3UU2rfVjBqOTqmgRBiK7AnV+DaOk5DwSq9wchMoSnX0JSbVL7cIL90huzsMPmF43xfuUghMsH6apBi8jWtenETuLVkYSPMEnbtPVbhMYY6SS1+lWp0glJknPWFU2RmRsjOHiO/PEr+wyUyy34K8ZAE9sruKdsECtxuC8dIYxVf0M5OYqgBajE/pdULstTs3HHS4WGSr47IUOdOoi75KSjTNKXC/un/Agq7QbcewyyEaGWCNNUgmjIugfml06gzIyRfHib6+ACR+/uITQ+RWrxCKT2L2dL6oradsmPSbeYwSzM0s1MY6h20r0HKkcvkFk6Qej1C4uVRPj88wOqD/Sjhs6yvPUQvJ2QL7dI2PZVNOvUk7dJbGtlnVJW7FFaukgoPE38+xNqTQ3x6dJDE7GWKyTc0Kqo84d6/O4D9F0K6o9uu0K4m0NfnKUbvkln0k5q7gBI+R3LhOpXcR6yWhuPYOzwtvbzT7ALhWNimhlFJyn7rR4RGJYNttba7xPVYzwvd+q7n5b6PO9IVvX6T3wfk+35OdoMOunkGXXlSoTdxEHhQBd5NtwH3Ct7M2lX9Dy4Q7d3tQsNqAAAAAElFTkSuQmCC",
   },
   {
-    name: "Chicken Hawaii",
-    price: 119,
+    name: "Fetaost",
+    price: 1,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/1371/D6F23F89A9C7E50710A42D9718C6ECA4D/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+klEQVQ4jc2SyY7aQBCGef9HSA6JlMtkkQZmNEMgCsMSBm8YHGMb2yw2BmODwfvWdjcRhmSSQyJGOSSlvnS1vv6r/qrS4S+i9P/CCCGIEHo2DGGepnEUemkSQQifAcM8D3xnY6j6crKz9DSNL4JPgqFvr1Re+NoROWyp8oG3gzA/HNAfYAQhTOLAMhfatM8Rt1T7PUfVlPEXaz2JAidNwgwkxS+/wgihLEuj0LO32lzoMt23vforrHE1wm8k+k4Re+ZK2m8Xrm0mcYgKC55gAIDrWMZqosqkQJaJ+otW9fVjs8Lg9xxRGdM1RcT0Bbcx5oFvn1o4wwihKAoNXZmKfYlt8fg1WX/Z+/SG7lVZqsbiZY6oyKPmYsYY+iwMHIS+KyOEQJq4zn6tK3OZEYZNplsetK5G2I04/MyRd8Pu9Yj8OBXwxZw19Vkc+SfnSgihPM/2ljmVRvKYmckMP3ggHj5QnYrMYYpIcmQVa7yjsbo6HW0N1XO2GUjOhh1lQbpeKlSvgXdqEk9pM5an20T7XuLptSYrEj3E62y/bepqHAV5Bk41F2UXyvZuI/IDln7UVDHw9pa5mghDTZFce+u7O8vUNmstCr3C5KdRn3vOMhD4rmtbUejDPM8ACH0vCr0MpBAeE1kGTuP57ZKgIn5cjuenl4vW8/L4d/A3YDNySj7Ft6AAAAAASUVORK5CYII=",
   },
   {
-    name: "Margherita",
-    price: 109,
+    name: "Cheddar",
+    price: 1,
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/53/714726F64927884FF856D53EBE936E59D/760x706.jpg",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAACrElEQVQ4jbWU20uTYRzH938UJG4yM2UrZGRIkdRFQYVRV9GF0U03BQVeWFGZBzykHUTRNY2yqVihudaFGYpzB5va5mHzOOcObuvd3Pv67j0+z++NzcqoRCT88b17+Dz8nt/v+31k0n+UbJdgSGnHMCQFgoR5CfBOYEASZiWRhIQHk9PABCXMSQBJbQdDEiMdEOlHSzpuqoybaxUJO2YCIFLJe7eAIXmGWKAmxfk63n6NNV2KG09GP5yJm4sTrhYhYgE+nnoF/AFjCTHA+GDNhr0NnKmQNh5e/3ic6NasvlIHOvPDhkJyrIINjSI2Coj51YJMAgxiAlNzaKULzdwRrBeoHvVa14F4T164M9fXpvK2qf16TfD9uZDpAbloYGNuJCQ2YcyGBb+B/1osDJ+lDXnf2rOJDnVEr/I0KWcb9i+0qJZ0B+e0h+Zfn/B9uh51d3NUAFJbkEkSABcRvN2c5Qrdlx95mRPUZYX1ucvabGdV+nil3FGX6ahVOuuV7mbVvL7AN1hC+axIYCQJZBIACHHBb6SHrxKdGn9zpl+b5dXmOKsV1ntpttJ020O55X7aWJV84pFi/JnK9bYoNGPkGHKjbQDECVEHNVET6j3vbdN4n+e46zOst/eYSvbaKzNs5Yrhu/ss5QpLdbalocDZcyvo/syx6z+nDRhzMSZoISa0q/03PO0F00+yvlQobGVye63SVC4fLM0wPz5ie3F5vLds1twRWZkSOOa3PQNCPMWT/oR/JGSuWXhX5NJfdLaesjUeG6o/amo8Pf7mpntE73WPRvwLNElgJPzlMAAsMmxscc1jCk/3eay6mYGnkwNNs+Z2n2soFl5maFLgOYTEDbf+IxgAGIkcz1B0PBQnAmRslSYJjqGRKGxsaCtvb3o1VT8SsVUyd+sz2B7+DmNdGXc3qLWNAAAAAElFTkSuQmCC",
+  },
+].map((obj, index) => ({ id: index + 1, ...obj }));
+
+export const products = [
+  {
+    name: "SNACKBOX - SMALL",
+    imageUrl:
+      "https://pizzahut-images.futureordering.com/images/product/1654/3DB015F32247F5F187E46CEAEE457846D/760x706.jpg", // Додайте шлях до зображення
+    categoryId: 1,
   },
   {
-    name: "Vegeroni Lovers",
-    price: 109,
+    name: "SNACKBOX - MEDIUM",
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/2762/5703BD6B491ACFE9F631604CB8055BCAD/760x706.jpg",
+      "https://pizzahut-images.futureordering.com/images/product/1655/79343FD78F4D4E161B17B12DD09248DAD/760x706.jpg",
+    categoryId: 3,
   },
   {
-    name: "Spicy Vegetarian",
-    price: 119,
+    name: "SNACKBOX - LARGE",
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/57/EB7B86FE58B755112F3CD02ABAAB1289D/760x706.jpg",
+      "https://pizzahut-images.futureordering.com/images/product/1656/AED9D32705F78F306AEE2A6CD8687509D/760x706.jpg",
+    categoryId: 2,
   },
   {
-    name: "Fresh Basil",
-    price: 119,
+    name: "PULLED BEEF SANDWICH",
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/54/3B559784137108562F759A50302C4573D/760x706.jpg",
+      "https://pizzahut-images.futureordering.com/images/product/1348/D3B124115DAE125532F7D0DD410E47ACD/760x706.jpg",
+    categoryId: 1,
   },
   {
-    name: "Veggie Lovers",
-    price: 109,
+    name: "CLASSIC BLT SANDWICH",
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/58/D3A19FDD5ECDC76FC68A633F18E13260D/760x706.jpg",
+      "https://pizzahut-images.futureordering.com/images/product/1349/F7C39427C85DBC5DE71B1D5774D03A18D/760x706.jpg",
+    categoryId: 2,
+  },
+  {
+    name: "SPICY TUNA SANDWICH",
+    imageUrl:
+      "https://pizzahut-images.futureordering.com/images/product/3002/B395780F582B982438B6279FFA2F1CB4D/760x706.jpg",
+    categoryId: 3,
+  },
+  {
+    name: "CHICKEN SANDWICH",
+    imageUrl:
+      "https://pizzahut-images.futureordering.com/images/product/1351/71A6036F1D70ECA39F836885D49DEF66D/760x706.jpg",
+    categoryId: 1,
   },
 ];
