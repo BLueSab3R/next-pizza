@@ -24,17 +24,17 @@ model User {
 }
 
 model Product {
-    id           Int           @id @default(autoincrement())
-    name         String
-    imageUrl     String
-    category     Category      @relation(fields: [categoryId], references: [id])
-    categoryId   Int
-    ingredients  Ingredient[]
-    cartItems    CartItem[]
-    productItems ProductItem[]
-
-    createdAt DateTime @default(now())
-    updatedAt DateTime @default(now()) @updatedAt
+    id          Int           @id @default(autoincrement())
+    name        String
+    imageUrl    String
+    category    Category      @relation(fields: [categoryId], references: [id])
+    categoryId  Int
+    ingredients Ingredient[]
+    cartItems   CartItem[]
+    variations  ProductItem[]
+    description String?
+    createdAt   DateTime      @default(now())
+    updatedAt   DateTime      @default(now()) @updatedAt
 }
 
 model ProductItem {
@@ -91,7 +91,7 @@ model CartItem {
     cart          Cart         @relation(fields: [cartId], references: [id])
     cartId        Int
     quantity      Int
-    ingradients   Ingredient[]
+    ingredients   Ingredient[]
     product       Product?     @relation(fields: [productId], references: [id])
     productId     Int?
 

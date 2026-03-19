@@ -109,45 +109,104 @@ export const ingredients = [
 
 export const products = [
   {
-    name: "SNACKBOX - SMALL",
+    name: "SNACKPLATE - SMALL",
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/1654/3DB015F32247F5F187E46CEAEE457846D/760x706.jpg", // Додайте шлях до зображення
-    categoryId: 1,
-  },
-  {
-    name: "SNACKBOX - MEDIUM",
-    imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/1655/79343FD78F4D4E161B17B12DD09248DAD/760x706.jpg",
+      "https://pizzahut-images.futureordering.com/images/product/1654/3DB015F32247F5F187E46CEAEE457846D/760x706.jpg",
+    description: "Välj två av dina favorit sides",
     categoryId: 3,
   },
   {
-    name: "SNACKBOX - LARGE",
+    name: "SNACKPLATE - MEDIUM",
+    imageUrl:
+      "https://pizzahut-images.futureordering.com/images/product/1655/79343FD78F4D4E161B17B12DD09248DAD/760x706.jpg",
+    description: "Välj fyra av dina favorit sides",
+    categoryId: 3,
+  },
+  {
+    name: "SNACKPLATE - LARGE",
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/1656/AED9D32705F78F306AEE2A6CD8687509D/760x706.jpg",
+    description: "Välj sex av dina favorit sides",
     categoryId: 2,
   },
   {
     name: "PULLED BEEF SANDWICH",
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/1348/D3B124115DAE125532F7D0DD410E47ACD/760x706.jpg",
-    categoryId: 1,
+    description:
+      "Ciabatta, BBQ Sås, Mozzarella, Pulled Beef, Jalapeños, Isbergssallad, Vitlökssås",
+    categoryId: 4,
   },
   {
     name: "CLASSIC BLT SANDWICH",
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/1349/F7C39427C85DBC5DE71B1D5774D03A18D/760x706.jpg",
+    description:
+      "Ciabatta, Mozzarella, Bacon, Cocktailtomater, Isbergssallad, Majonnäs",
     categoryId: 2,
   },
   {
     name: "SPICY TUNA SANDWICH",
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/3002/B395780F582B982438B6279FFA2F1CB4D/760x706.jpg",
+    description:
+      "Ciabatta, Mozzarella, Tonfisk, Rödlök, Jalapeños, Franks Hot Sauce, Chiliflakes, Majonnäs",
     categoryId: 3,
   },
   {
     name: "CHICKEN SANDWICH",
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/1351/71A6036F1D70ECA39F836885D49DEF66D/760x706.jpg",
-    categoryId: 1,
+    description:
+      "Ciabatta, Mozzarella, Grillad Kyckling, Cocktailtomater, Isbergssallad, Majonnäs",
+    categoryId: 5,
+  },
+  {
+    name: "VITLÖKSBRÖD",
+    imageUrl: "/images/products/garlic-bread.jpg",
+    description: "Klassiskt rostat bröd med vitlökssmör",
+    categoryId: 4,
+  },
+  {
+    name: "VITLÖKSBRÖD SUPREME",
+    imageUrl: "/images/products/garlic-bread-supreme.jpg",
+    description: "Vitlöksbröd toppat med smält mozzarella",
+    categoryId: 4,
+  },
+  {
+    name: "VITLÖKSBRÖD PEPPERONI",
+    imageUrl: "/images/products/garlic-bread-pepperoni.jpg",
+    description: "Vitlöksbröd med mozzarella och pepperoni",
+    categoryId: 4,
+  },
+  {
+    name: "CHILI CHEESE",
+    imageUrl: "/images/products/chili-cheese.jpg",
+    description: "Frasiga bollar fyllda med smält ost och jalapenos",
+    categoryId: 5,
+  },
+  {
+    name: "POMMES FRITES",
+    imageUrl: "/images/products/fries.jpg",
+    description: "Klassiska tunna och krispiga pommes frites",
+    categoryId: 5,
+  },
+  {
+    name: "SALLADSBUFFÉ",
+    imageUrl: "/images/products/salad-bar.jpg",
+    description: "Välj dina favoriter från vår fräscha salladsbar",
+    categoryId: 5,
+  },
+  {
+    name: "CHEESE TRIANGLES",
+    imageUrl: "/images/products/cheese-triangles.jpg",
+    description: "Friterade osttrianglar",
+    categoryId: 5,
+  },
+  {
+    name: "LÖKRINGAR",
+    imageUrl: "/images/products/onion-rings.jpg",
+    description: "Krispiga friterade lökringar",
+    categoryId: 5,
   },
 ];
