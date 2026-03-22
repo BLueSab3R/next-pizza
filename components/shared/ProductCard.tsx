@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
 import { Title } from "./Title";
 import { Button } from "../ui";
 import { Plus } from "lucide-react";
