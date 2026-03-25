@@ -5,7 +5,7 @@ export const useClickAway = <T extends HTMLElement>(
   handler: () => void,
 ) => {
   useEffect(() => {
-    const element = ref.current;
+    const element = ref?.current;
     const listener = (event: MouseEvent | TouchEvent) => {
       if (!element || element.contains(event?.target as Node)) return;
       handler();
