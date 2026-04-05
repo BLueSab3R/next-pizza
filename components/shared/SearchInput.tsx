@@ -2,18 +2,22 @@
 
 import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useClickAway } from "./hooks/useClickAway";
 import Link from "next/link";
 import Image from "next/image";
-
+import { Product } from "@prisma/client";
+import { Api } from "@/services/api-clients";
+import { useDebounce } from "react-use"; // Використовуємо все з react-use!
 interface Props {
   className?: string;
 }
 
 export const SearchInput = ({ className }: Props) => {
+  const [searchQuery, setSearchQuery] = useState("");
   const searchRef = useRef<HTMLDivElement>(null);
   const [focused, setFocused] = useState(false);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useClickAway(searchRef, () => {
     setFocused(false);
@@ -21,6 +25,16 @@ export const SearchInput = ({ className }: Props) => {
   const onClickItem = () => {
     console.log("item clicked");
   };
+
+  useDebounce(
+    () => {
+      Api.products.search(searchQuery).then((items) => {
+        setProducts(items);
+      });
+    },
+    150,
+    [searchQuery],
+  );
   return (
     <>
       {focused && (
@@ -40,28 +54,35 @@ export const SearchInput = ({ className }: Props) => {
           type="text"
           className="rounded-2xl outline-none w-full bg-gray-100 pl-11"
           onFocus={() => setFocused(true)}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <div
-          className={cn(
-            "absolute w-full bg-white rounded-xl py-2 top-14 shadow-md transition-all  duration-300 invisible opacity-0    z-30",
-            focused && "visible opacity-100 top-12",
-          )}
-        >
-          <Link
-            onClick={onClickItem}
-            href="/product/1"
-            className="flex items-center gap-3 w-full px-3 py-2 hover:bg-primary/10 cursor-pointer"
+        {products.length > 0 && (
+          <div
+            className={cn(
+              "absolute w-full bg-white rounded-xl py-2 top-14 shadow-md transition-all  duration-300 invisible opacity-0    z-30",
+              focused && "visible opacity-100 top-12",
+            )}
           >
-            <Image
-              className="rounded-sm "
-              src="https://pizzahut-images.futureordering.com/images/product/4/FA35B15078575E1B43939C02B7EAC9E0D/760x706.jpg"
-              width={32}
-              height={32}
-              alt="pizza"
-            />
-            <span>pizza 1</span>
-          </Link>
-        </div>
+            {products.map((product) => (
+              <Link
+                key={product.id}
+                onClick={onClickItem}
+                href={`/product/${product.id}`}
+                className="flex items-center gap-3 w-full px-3 py-2 hover:bg-primary/10 cursor-pointer"
+              >
+                <Image
+                  className="rounded-sm "
+                  src={product.imageUrl}
+                  width={32}
+                  height={32}
+                  alt={product.name}
+                />
+                <span>{product.name}</span>
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </>
   );
