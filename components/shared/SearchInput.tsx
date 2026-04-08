@@ -23,11 +23,13 @@ export const SearchInput = ({ className }: Props) => {
     setFocused(false);
   });
   const onClickItem = () => {
-    console.log("item clicked");
+    setFocused(false);
+    setSearchQuery("");
+    setProducts([]);
   };
 
   useDebounce(
-    () => {
+    async () => {
       Api.products.search(searchQuery).then((items) => {
         setProducts(items);
       });
@@ -72,7 +74,7 @@ export const SearchInput = ({ className }: Props) => {
                 className="flex items-center gap-3 w-full px-3 py-2 hover:bg-primary/10 cursor-pointer"
               >
                 <Image
-                  className="rounded-sm "
+                  className="rounded-sm w-8 h-8 object-cover"
                   src={product.imageUrl}
                   width={32}
                   height={32}

@@ -16,7 +16,13 @@ export const Header = ({ className }: Props) => {
       <Container className="flex items-center justify-between py-6">
         <Link href="/">
           <div className="flex items-center gap-4">
-            <Image src="/logo1.png" alt="logo" width={96} height={96} />
+            <Image
+              src="/logo1.png"
+              loading="eager"
+              alt="logo"
+              width={96}
+              height={96}
+            />
             <div className="">
               <h1 className="text-2xl uppercase font-black">Next pizza</h1>
               <p className="text-sm text-gray-400 leading-3">

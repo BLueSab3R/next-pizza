@@ -1,8 +1,9 @@
-export default function ProductPage({
-  params: { id },
+export default async function ProductPage({
+  params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  console.log(id);
+  const { id } = await params;
+
   return <div>Product - {id}</div>;
 }
