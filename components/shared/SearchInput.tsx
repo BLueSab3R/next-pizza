@@ -30,9 +30,12 @@ export const SearchInput = ({ className }: Props) => {
 
   useDebounce(
     async () => {
-      Api.products.search(searchQuery).then((items) => {
-        setProducts(items);
-      });
+      try {
+        const response = Api.products.search(searchQuery);
+        setProducts(response);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
     },
     150,
     [searchQuery],

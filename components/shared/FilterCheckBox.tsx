@@ -17,12 +17,12 @@ export const FilterCheckBox = ({
   checked,
 }: FilterCheckBoxProps) => {
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center space-x-2 cursor-pointer">
       <Checkbox
         onCheckedChange={onCheckedChange}
         checked={checked}
         value={value}
-        className="rounded-[8px] w-6 h-6"
+        className="rounded-xl w-6 h-6 cursor-pointer"
         id={`checkbox-${String(value)}`}
       />
       <label

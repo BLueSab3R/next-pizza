@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FilterCheckBox, FilterCheckBoxProps } from "../shared/FilterCheckBox";
-import { Input } from "../ui";
+import { Input, Skeleton } from "../ui";
 type Item = FilterCheckBoxProps;
 
 interface Props {
@@ -11,8 +11,9 @@ interface Props {
   defaultItems: Item[];
   limit: number;
   searchInputPlaceholder?: string;
-  onChange: (values: string[]) => void;
+  onClickCheckbox?: (values: string) => void;
   className?: string;
+  loading?: boolean;
 }
 
 export const CheckBoxFilterGroup = ({
@@ -21,8 +22,9 @@ export const CheckBoxFilterGroup = ({
   defaultItems,
   limit,
   searchInputPlaceholder = "Search...",
-  onChange,
+  onClickCheckbox,
   className,
+  loading,
 }: Props) => {
   const [showAll, setShowAll] = useState(false);
   const [searchFilter, setSearchFilter] = useState("");
@@ -34,6 +36,17 @@ export const CheckBoxFilterGroup = ({
         item.text.toLowerCase().includes(searchFilter.toLocaleLowerCase()),
       )
     : defaultItems.slice(0, limit);
+
+  if (loading) {
+    return (
+      <div className={className}>
+        <p className="font-bold mb-3">{title}</p>
+        {[...Array(limit)].map((_, index) => (
+          <Skeleton className=" h-6 mb-5" key={index} />
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className={className}>
@@ -48,14 +61,14 @@ export const CheckBoxFilterGroup = ({
         )}
       </div>
       <div className="flex flex-col gap-4 max-h-96 pr-2 overflow-auto scrollbar ">
-        {displayedItems.map((item, index) => (
+        {displayedItems.map((item) => (
           <FilterCheckBox
-            key={index}
+            key={item.value}
             value={item.value}
             text={item.text}
             endAdornment={item.endAdornment}
             checked={false}
-            onCheckedChange={(ids) => console.log(ids)}
+            onCheckedChange={() => onClickCheckbox?.(item.value)}
           />
         ))}
       </div>

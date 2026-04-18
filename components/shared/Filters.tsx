@@ -8,6 +8,7 @@ import {
   CheckBoxFilterGroup,
 } from "./index";
 import { Input } from "../ui";
+import { useFilterIngredients } from "./hooks/useFilterIngredients";
 
 interface Props {
   className?: string;
@@ -15,6 +16,12 @@ interface Props {
 
 export const Filters = ({ className }: Props) => {
   const [prices, setPrices] = useState([0, 500]);
+  const { ingredients, loading } = useFilterIngredients();
+
+  const items = ingredients.map((ingredient) => ({
+    text: ingredient.name,
+    value: String(ingredient.id),
+  }));
 
   return (
     <div className={className}>
@@ -47,33 +54,9 @@ export const Filters = ({ className }: Props) => {
         title="Ingredients"
         className="mt-5"
         limit={6}
-        items={[
-          { text: "Tomato", value: "1" },
-          { text: "Cheese", value: "2" },
-          { text: "Pepperoni", value: "3" },
-          { text: "Mushrooms", value: "4" },
-          { text: "Onions", value: "5" },
-          { text: "Olives", value: "6" },
-          { text: "Bacon", value: "7" },
-          { text: "Pineapple", value: "8" },
-          { text: "Spinach", value: "9" },
-          { text: "Ham", value: "10" },
-          { text: "Sausage", value: "11" },
-          { text: "Peppers", value: "12" },
-          { text: "Chicken", value: "13" },
-          { text: "Beef", value: "14" },
-          { text: "Anchovies", value: "15" },
-        ]}
-        defaultItems={[
-          { text: "Tomato", value: "1" },
-          { text: "Cheese", value: "2" },
-          { text: "Pepperoni", value: "3" },
-          { text: "Mushrooms", value: "4" },
-          { text: "Onions", value: "5" },
-          { text: "Olives", value: "6" },
-          { text: "Bacon", value: "7" },
-          { text: "Pineapple", value: "8" },
-        ]}
+        items={items}
+        defaultItems={items.slice(0, 5)}
+        loading={loading}
       />
     </div>
   );
