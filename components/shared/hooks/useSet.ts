@@ -25,7 +25,7 @@ export const useSet = <T>(initialSet = new Set<T>()) => {
 
   const toggle = useCallback((item: T) => {
     setSet((prevSet) => {
-      const newSet = new Set(prevSet); // Робимо копію
+      const newSet = new Set(prevSet);
 
       if (newSet.has(item)) {
         newSet.delete(item);

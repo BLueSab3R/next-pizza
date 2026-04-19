@@ -14,6 +14,8 @@ interface Props {
   onClickCheckbox?: (values: string) => void;
   className?: string;
   loading?: boolean;
+  selectedIds?: Set<string>;
+  name?: string;
 }
 
 export const CheckBoxFilterGroup = ({
@@ -25,6 +27,7 @@ export const CheckBoxFilterGroup = ({
   onClickCheckbox,
   className,
   loading,
+  selectedIds,
 }: Props) => {
   const [showAll, setShowAll] = useState(false);
   const [searchFilter, setSearchFilter] = useState("");
@@ -67,7 +70,7 @@ export const CheckBoxFilterGroup = ({
             value={item.value}
             text={item.text}
             endAdornment={item.endAdornment}
-            checked={false}
+            checked={selectedIds?.has(item.value)}
             onCheckedChange={() => onClickCheckbox?.(item.value)}
           />
         ))}

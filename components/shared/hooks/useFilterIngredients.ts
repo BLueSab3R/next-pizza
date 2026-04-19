@@ -6,6 +6,8 @@ import { useSet } from "./useSet";
 interface ReturnProps {
   ingredients: Ingredient[];
   loading: boolean;
+  selectedIds: Set<string>;
+  onAddId: (id: string) => void;
 }
 
 export const useFilterIngredients = (): ReturnProps => {
@@ -27,5 +29,5 @@ export const useFilterIngredients = (): ReturnProps => {
     }
     fetchIngredients();
   }, []);
-  return { ingredients, loading };
+  return { ingredients, loading, onAddId: toggle, selectedIds };
 };
