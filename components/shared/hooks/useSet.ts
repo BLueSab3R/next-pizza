@@ -32,7 +32,6 @@ export const useSet = <T>(initialSet = new Set<T>()) => {
       } else {
         newSet.add(item);
       }
-      console.log(newSet);
       return newSet;
     });
   }, []);

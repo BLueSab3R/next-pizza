@@ -8,13 +8,13 @@ type Item = FilterCheckBoxProps;
 interface Props {
   title: string;
   items: Item[];
-  defaultItems: Item[];
-  limit: number;
+  defaultItems?: Item[];
+  limit?: number | 0;
   searchInputPlaceholder?: string;
   onClickCheckbox?: (values: string) => void;
   className?: string;
   loading?: boolean;
-  selectedIds?: Set<string>;
+  selected?: Set<string>;
   name?: string;
 }
 
@@ -22,12 +22,12 @@ export const CheckBoxFilterGroup = ({
   title,
   items,
   defaultItems,
-  limit,
+  limit = 3,
   searchInputPlaceholder = "Search...",
   onClickCheckbox,
   className,
   loading,
-  selectedIds,
+  selected,
 }: Props) => {
   const [showAll, setShowAll] = useState(false);
   const [searchFilter, setSearchFilter] = useState("");
@@ -38,15 +38,17 @@ export const CheckBoxFilterGroup = ({
     ? items.filter((item) =>
         item.text.toLowerCase().includes(searchFilter.toLocaleLowerCase()),
       )
-    : defaultItems.slice(0, limit);
+    : (defaultItems || items).slice(0, limit);
 
   if (loading) {
     return (
       <div className={className}>
         <p className="font-bold mb-3">{title}</p>
-        {[...Array(limit)].map((_, index) => (
-          <Skeleton className=" h-6 mb-5" key={index} />
-        ))}
+        <div className="flex flex-col gap-4 w-fit">
+          {[...Array(limit)].map((_, index) => (
+            <Skeleton className="h-6 rounded-md" key={index} />
+          ))}
+        </div>
       </div>
     );
   }
@@ -54,23 +56,24 @@ export const CheckBoxFilterGroup = ({
   return (
     <div className={className}>
       <p className="font-bold mb-3">{title}</p>
-      <div className="mb-5">
-        {showAll && (
+      {showAll && (
+        <div className="mb-5">
           <Input
             placeholder={searchInputPlaceholder}
             onChange={(e) => onChangeFilterSearch(e.target.value)}
             className="bg-gray-50 border-none"
           />
-        )}
-      </div>
-      <div className="flex flex-col gap-4 max-h-96 pr-2 overflow-auto scrollbar ">
+        </div>
+      )}
+      <div className="flex flex-col gap-4 max-h-96 pr-2 overflow-auto scrollbar w-fit">
         {displayedItems.map((item) => (
           <FilterCheckBox
             key={item.value}
             value={item.value}
             text={item.text}
+            name={item.text}
             endAdornment={item.endAdornment}
-            checked={selectedIds?.has(item.value)}
+            checked={selected?.has(item.value)}
             onCheckedChange={() => onClickCheckbox?.(item.value)}
           />
         ))}

@@ -29,7 +29,7 @@ export const FilterCheckBox = ({
       />
       <label
         htmlFor={`checkbox-${String(name)}-${String(value)}`}
-        className="leading-none cursor-pointer flex-1"
+        className="leading-none cursor-pointer flex-1 select-none"
       >
         {text}
       </label>
