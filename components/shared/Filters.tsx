@@ -1,46 +1,37 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Title, RangeSlider, CheckBoxFilterGroup } from "./index";
+import { useMemo } from "react";
+import { Title, RangeSlider, CheckBoxFilterGroup, SelectedList } from "./index";
 import { Input } from "../ui";
-import { useFilterIngredients } from "./hooks/useFilterIngredients";
-import { useSet } from "../shared/hooks/useSet";
+import { useFilters, useIngredients, useQueryFilters } from "@/hooks";
 
 interface Props {
   className?: string;
 }
 
-interface PriceProps {
-  priceFrom: number;
-  priceTo: number;
-}
-
 export const Filters = ({ className }: Props) => {
-  const [prices, setPrices] = useState<PriceProps>({
-    priceFrom: 0,
-    priceTo: 500,
-  });
-  const { ingredients, loading, selectedIngredients, onAddId } =
-    useFilterIngredients();
+  const { ingredients, loading } = useIngredients();
+  const filters = useFilters();
 
-  const [selectedSizes, { toggle: toggleSize }] = useSet(new Set<string>([]));
+  useQueryFilters(filters);
 
-  const [pizzaTypes, { toggle: togglePizzaTypes }] = useSet(
-    new Set<string>([]),
+  const items = useMemo(() => {
+    return (ingredients || []).map((ingredient) => ({
+      text: ingredient.name,
+      value: String(ingredient.id),
+    }));
+  }, [ingredients]);
+
+  const dispayedIngredients = Array.from(filters.selectedIngredients).map(
+    (id) => {
+      const foundIngredient = items.find((item) => item.value === id);
+      return {
+        id,
+        name: foundIngredient ? foundIngredient.text : "",
+        value: foundIngredient?.value,
+      };
+    },
   );
-
-  const items = ingredients.map((ingredient) => ({
-    text: ingredient.name,
-    value: String(ingredient.id),
-  }));
-
-  const updatePrice = (name: keyof PriceProps, value: number) => {
-    setPrices({ ...prices, [name]: value });
-  };
-
-  useEffect(() => {
-    console.log(prices, ingredients, selectedIngredients, selectedSizes);
-  }, [prices, ingredients, selectedIngredients, selectedSizes]);
 
   return (
     <div className={className}>
@@ -54,7 +45,7 @@ export const Filters = ({ className }: Props) => {
             { text: "Traditional", value: "2" },
           ]}
           onClickCheckbox={togglePizzaTypes}
-          selected={pizzaTypes}
+          selected={filters.pizzaTypes}
         />
         <CheckBoxFilterGroup
           title="Sizes"
@@ -65,7 +56,7 @@ export const Filters = ({ className }: Props) => {
             { text: "40cm", value: "40" },
           ]}
           onClickCheckbox={toggleSize}
-          selected={selectedSizes}
+          selected={filters.selectedSizes}
         />
       </div>
       <div className="mt-5 border-y border-y-neutral-100 py-6 pb-7">
@@ -76,7 +67,7 @@ export const Filters = ({ className }: Props) => {
             placeholder="0"
             min={0}
             max={500}
-            value={String(prices.priceFrom)}
+            value={String(filters.prices.priceFrom)}
             onChange={(e) => updatePrice("priceFrom", Number(e.target.value))}
           />
           <Input
@@ -84,7 +75,7 @@ export const Filters = ({ className }: Props) => {
             min={100}
             max={500}
             placeholder="500"
-            value={String(prices.priceTo)}
+            value={String(filters.prices.priceTo)}
             onChange={(e) => updatePrice("priceTo", Number(e.target.value))}
           />
         </div>
@@ -95,9 +86,15 @@ export const Filters = ({ className }: Props) => {
           min={0}
           max={500}
           step={10}
-          value={[prices.priceFrom, prices.priceTo]}
+          value={[filters.prices.priceFrom, filters.prices.priceTo]}
         />
       </div>
+      {filters.selectedIngredients.size > 0 && (
+        <SelectedList
+          items={dispayedIngredients}
+          onClickItem={(id) => removeId(id)}
+        />
+      )}
       <CheckBoxFilterGroup
         title="Ingredients"
         name="ingredients"
@@ -107,7 +104,7 @@ export const Filters = ({ className }: Props) => {
         defaultItems={items.slice(0, 5)}
         loading={loading}
         onClickCheckbox={(id) => onAddId(id)}
-        selected={selectedIngredients}
+        selected={filters.selectedIngredients}
       />
     </div>
   );

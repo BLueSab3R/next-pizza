@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Title } from "./Title";
 import { cn } from "@/lib/utils";
 import { ProductCard } from "./ProductCard";

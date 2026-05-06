@@ -34,6 +34,7 @@ export const CheckBoxFilterGroup = ({
   const onChangeFilterSearch = (value: string) => {
     setSearchFilter(value);
   };
+
   const displayedItems = showAll
     ? items.filter((item) =>
         item.text.toLowerCase().includes(searchFilter.toLocaleLowerCase()),
