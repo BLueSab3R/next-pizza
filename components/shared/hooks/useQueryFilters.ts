@@ -16,5 +16,11 @@ export const useQueryFilters = (filters: Filters) => {
       arrayFormat: "comma",
     });
     router.push(`?${query}`, { scroll: false });
-  }, [filters, router]);
+  }, [
+    filters.prices,
+    filters.pizzaTypes,
+    filters.selectedSizes,
+    filters.selectedIngredients,
+    router,
+  ]);
 };

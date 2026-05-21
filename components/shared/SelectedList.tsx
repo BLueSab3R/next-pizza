@@ -15,7 +15,6 @@ interface Props {
 export const SelectedList = ({ className, items, onClickItem }: Props) => {
   const itemsArray = Array.from(items);
   const onClickCheckbox = (value: string) => {
-    console.log("Clicked item:", value);
     onClickItem?.(value);
   };
   if (items.length === 0) {
@@ -26,7 +25,7 @@ export const SelectedList = ({ className, items, onClickItem }: Props) => {
       {itemsArray.map((item) => (
         <div
           key={item.id}
-          className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-md flex items-center gap-2"
+          className="text-sm hover:bg-gray-200 text-gray-500 bg-gray-100 px-3 py-1 rounded-md flex items-center gap-2"
         >
           <button
             onClick={() => onClickCheckbox?.(item.value)}

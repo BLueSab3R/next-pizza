@@ -1,6 +1,5 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
 import { useCategoryStore } from "@/store/category";
 
 interface Props {

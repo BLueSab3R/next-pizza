@@ -3,11 +3,17 @@
 import { useMemo } from "react";
 import { Title, RangeSlider, CheckBoxFilterGroup, SelectedList } from "./index";
 import { Input } from "../ui";
-import { useFilters, useIngredients, useQueryFilters } from "@/hooks";
+import { useFilters, useIngredients, useQueryFilters } from "./hooks";
+import { Ingredient } from "@prisma/client";
 
 interface Props {
   className?: string;
 }
+
+type ItemType = {
+  text: string;
+  value: string;
+};
 
 export const Filters = ({ className }: Props) => {
   const { ingredients, loading } = useIngredients();
@@ -16,7 +22,7 @@ export const Filters = ({ className }: Props) => {
   useQueryFilters(filters);
 
   const items = useMemo(() => {
-    return (ingredients || []).map((ingredient) => ({
+    return (ingredients || []).map((ingredient: Ingredient) => ({
       text: ingredient.name,
       value: String(ingredient.id),
     }));
@@ -24,14 +30,19 @@ export const Filters = ({ className }: Props) => {
 
   const dispayedIngredients = Array.from(filters.selectedIngredients).map(
     (id) => {
-      const foundIngredient = items.find((item) => item.value === id);
+      const foundIngredient = items.find((item: ItemType) => item.value === id);
       return {
         id,
         name: foundIngredient ? foundIngredient.text : "",
-        value: foundIngredient?.value,
+        value: foundIngredient?.value ? foundIngredient?.value : "",
       };
     },
   );
+
+  const updatePrices = (prices: number[]) => {
+    filters.setPrices("priceFrom", prices[0]);
+    filters.setPrices("priceTo", prices[1]);
+  };
 
   return (
     <div className={className}>
@@ -44,7 +55,7 @@ export const Filters = ({ className }: Props) => {
             { text: "Thin", value: "1" },
             { text: "Traditional", value: "2" },
           ]}
-          onClickCheckbox={togglePizzaTypes}
+          onClickCheckbox={filters.setPizzaTypes}
           selected={filters.pizzaTypes}
         />
         <CheckBoxFilterGroup
@@ -55,7 +66,7 @@ export const Filters = ({ className }: Props) => {
             { text: "30cm", value: "30" },
             { text: "40cm", value: "40" },
           ]}
-          onClickCheckbox={toggleSize}
+          onClickCheckbox={filters.setSizes}
           selected={filters.selectedSizes}
         />
       </div>
@@ -68,7 +79,9 @@ export const Filters = ({ className }: Props) => {
             min={0}
             max={500}
             value={String(filters.prices.priceFrom)}
-            onChange={(e) => updatePrice("priceFrom", Number(e.target.value))}
+            onChange={(e) =>
+              filters.setPrices("priceFrom", Number(e.target.value))
+            }
           />
           <Input
             type="number"
@@ -76,13 +89,13 @@ export const Filters = ({ className }: Props) => {
             max={500}
             placeholder="500"
             value={String(filters.prices.priceTo)}
-            onChange={(e) => updatePrice("priceTo", Number(e.target.value))}
+            onChange={(e) =>
+              filters.setPrices("priceTo", Number(e.target.value))
+            }
           />
         </div>
         <RangeSlider
-          onValueChange={([priceFrom, priceTo]) =>
-            setPrices({ priceFrom, priceTo })
-          }
+          onValueChange={updatePrices}
           min={0}
           max={500}
           step={10}
@@ -91,8 +104,9 @@ export const Filters = ({ className }: Props) => {
       </div>
       {filters.selectedIngredients.size > 0 && (
         <SelectedList
+          className="cursor-pointer x"
           items={dispayedIngredients}
-          onClickItem={(id) => removeId(id)}
+          onClickItem={filters.removeIngredients}
         />
       )}
       <CheckBoxFilterGroup
@@ -103,7 +117,7 @@ export const Filters = ({ className }: Props) => {
         items={items}
         defaultItems={items.slice(0, 5)}
         loading={loading}
-        onClickCheckbox={(id) => onAddId(id)}
+        onClickCheckbox={filters.setIngredients}
         selected={filters.selectedIngredients}
       />
     </div>
