@@ -1,8 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Title } from "./Title";
-import { Button } from "../ui";
 import { Plus } from "lucide-react";
+import Link from "next/link";
+import { Button } from "../ui";
+import { Title } from "./Title";
 
 interface Props {
   id: number;
@@ -22,14 +21,13 @@ export const ProductCard = ({
   return (
     <div className={className}>
       <Link href={`/product/${id}`}>
-        <div className="flex justify-center rounded-lg h-65">
+        <div className="flex justify-center  h-65">
           <img
             src={imageUrl}
             alt="Pizza"
             width={215}
             height={215}
-            // className="w-full h-full "
-            className="w-53.75 h-53.75"
+            className="w-full h-full rounded-lg"
           />
         </div>
         <Title text={name} size="sm" className="mb-1 mt-3 font-bold" />

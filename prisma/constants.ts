@@ -2,8 +2,7 @@ export const categories = [
   { name: "Pizzas" },
   { name: "Combos" },
   { name: "Snacks" },
-  { name: "Cocktails" },
-  { name: "Coffee" },
+  { name: "Sandwich" },
   { name: "Drinks" },
   { name: "Desserts" },
 ];
@@ -123,10 +122,31 @@ export const products = [
     categoryId: 3,
   },
   {
-    name: "SNACKPLATE - LARGE",
+    name: "Fanta Crimson Cherry Deal",
     imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/1656/AED9D32705F78F306AEE2A6CD8687509D/760x706.jpg",
-    description: "Välj sex av dina favorit sides",
+      "https://pizzahut-images.futureordering.com/images/product/3173/CF2106F39477A1A8BC5B7EE0A8A0753AD/380x354.jpg",
+    description: "Up to 30% discount! 2x Medium PAN & 2x 50cl sodas",
+    categoryId: 2,
+  },
+  {
+    name: "All-in",
+    imageUrl:
+      "https://pizzahut-images.futureordering.com/images/product/2398/9D9CBB30BA627309767062E9F8677FE7D/380x354.jpg",
+    description: "Medium PAN, Side & Beverage",
+    categoryId: 2,
+  },
+  {
+    name: "Big Sharer",
+    imageUrl:
+      "https://pizzahut-images.futureordering.com/images/product/2400/731E45DAC57A4E50013E76313AC7FA25D/380x354.jpg",
+    description: "Large PAN, Side & 2x Beverage",
+    categoryId: 2,
+  },
+  {
+    name: "Family Deal",
+    imageUrl:
+      "https://pizzahut-images.futureordering.com/images/product/2401/4991D307378C9FBA6BEE5EAB28520F0DD/380x354.jpg",
+    description: "2x Large PAN, 2x Side & 4x Beverage",
     categoryId: 2,
   },
   {
@@ -135,23 +155,16 @@ export const products = [
       "https://pizzahut-images.futureordering.com/images/product/1348/D3B124115DAE125532F7D0DD410E47ACD/760x706.jpg",
     description:
       "Ciabatta, BBQ Sås, Mozzarella, Pulled Beef, Jalapeños, Isbergssallad, Vitlökssås",
-    categoryId: 4,
+    categoryId: 5,
   },
-  {
-    name: "CLASSIC BLT SANDWICH",
-    imageUrl:
-      "https://pizzahut-images.futureordering.com/images/product/1349/F7C39427C85DBC5DE71B1D5774D03A18D/760x706.jpg",
-    description:
-      "Ciabatta, Mozzarella, Bacon, Cocktailtomater, Isbergssallad, Majonnäs",
-    categoryId: 2,
-  },
+
   {
     name: "SPICY TUNA SANDWICH",
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/3002/B395780F582B982438B6279FFA2F1CB4D/760x706.jpg",
     description:
       "Ciabatta, Mozzarella, Tonfisk, Rödlök, Jalapeños, Franks Hot Sauce, Chiliflakes, Majonnäs",
-    categoryId: 3,
+    categoryId: 4,
   },
   {
     name: "CHICKEN SANDWICH",
@@ -166,21 +179,21 @@ export const products = [
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/1657/5784B13179803D827C6A214F2091127CD/760x706.jpg",
     description: "Klassiskt rostat bröd med vitlökssmör",
-    categoryId: 4,
+    categoryId: 3,
   },
   {
     name: "VITLÖKSBRÖD SUPREME",
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/1645/F3139917D1C938DBF6D95E3BF677825CD/760x706.jpg",
     description: "Vitlöksbröd toppat med smält mozzarella",
-    categoryId: 4,
+    categoryId: 3,
   },
   {
     name: "VITLÖKSBRÖD PEPPERONI",
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/1646/5D8E41047371E60100A558B9D1B14ED4D/760x706.jpg",
     description: "Vitlöksbröd med mozzarella och pepperoni",
-    categoryId: 4,
+    categoryId: 3,
   },
   {
     name: "CHILI CHEESE",
@@ -215,6 +228,34 @@ export const products = [
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/1640/3380856C3C4F60283F5084BB66CBDE4CD/380x354.jpg",
     description: "Krispiga friterade lökringar",
+    categoryId: 5,
+  },
+  {
+    name: "Soda",
+    imageUrl:
+      "https://pizzahut-images.futureordering.com/images/product/404/87D8557DC3D794A354BA27D27DBA872BD/760x706.jpg",
+    description: "Self-service at the soda machine",
+    categoryId: 5,
+  },
+  {
+    name: "Soda with free refills",
+    imageUrl:
+      "https://pizzahut-images.futureordering.com/images/product/883/7E832FCC7F8731BBBD152472E33836D9D/760x706.jpg",
+    description: "Self-service at the soda machine",
+    categoryId: 5,
+  },
+  {
+    name: "Koffe",
+    imageUrl:
+      "  https://pizzahut-images.futureordering.com/images/product/418/107A522170C69959238BC78283503C6BD/760x706.jpg",
+    description: "Self-service at the soda machine",
+    categoryId: 5,
+  },
+  {
+    name: "Tea",
+    imageUrl:
+      "  https://pizzahut-images.futureordering.com/images/product/419/D5427008005E84D3E598D432F006A259D/760x706.jpg",
+    description: "Self-service at the soda machine",
     categoryId: 5,
   },
 ];

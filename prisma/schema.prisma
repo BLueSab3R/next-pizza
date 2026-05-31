@@ -16,8 +16,8 @@ model User {
     providerId        String?
     cart              Cart?
     orders            Order[]
-    vericicationCodes VericicationCode?
-    verified          DateTime
+    verificationCodes VerificationCode?
+    verified          DateTime?
 
     createdAt DateTime @default(now())
     updatedAt DateTime @default(now()) @updatedAt
@@ -109,7 +109,7 @@ model Order {
     paymentId   String?
     items       Json
     fullName    String
-    adress      String
+    address      String
     email       String
     phone       String
     comment     String?
@@ -118,7 +118,7 @@ model Order {
     updatedAt DateTime @default(now()) @updatedAt
 }
 
-model VericicationCode {
+model VerificationCode {
     id     Int    @id @default(autoincrement())
     user   User   @relation(fields: [userId], references: [id])
     userId Int    @unique

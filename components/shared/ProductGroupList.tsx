@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { Title } from "./Title";
 import { cn } from "@/lib/utils";
-import { ProductCard } from "./ProductCard";
-import { useIntersection } from "./hooks/useIntersection";
 import { useCategoryStore } from "@/store/category";
 import { ProductItem } from "@prisma/client";
+import { useEffect, useRef } from "react";
+import { ProductCard } from "./ProductCard";
+import { Title } from "./Title";
+import { useIntersection } from "./hooks/useIntersection";
 
 type Product = {
   id: number;
@@ -49,7 +49,7 @@ export const ProductGroupList = ({
             id={product.id}
             name={product.name}
             imageUrl={product.imageUrl}
-            price={product.variations[0].price}
+            price={product.variations[0]?.price || 9}
           />
         ))}
       </div>
