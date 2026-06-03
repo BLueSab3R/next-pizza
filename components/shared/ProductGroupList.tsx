@@ -13,6 +13,7 @@ type Product = {
   name: string;
   imageUrl: string;
   variations: ProductItem[];
+  description?: string;
 };
 
 type Props = {
@@ -49,7 +50,8 @@ export const ProductGroupList = ({
             id={product.id}
             name={product.name}
             imageUrl={product.imageUrl}
-            price={product.variations[0]?.price || 9}
+            price={product.variations[0]?.price}
+            description={product?.description}
           />
         ))}
       </div>

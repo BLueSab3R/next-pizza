@@ -1,4 +1,5 @@
 import { Plus } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui";
 import { Title } from "./Title";
@@ -8,6 +9,7 @@ interface Props {
   name: string;
   price: number;
   imageUrl: string;
+  description?: string;
   className?: string;
 }
 
@@ -17,12 +19,13 @@ export const ProductCard = ({
   price,
   imageUrl,
   className,
+  description,
 }: Props) => {
   return (
     <div className={className}>
       <Link href={`/product/${id}`}>
-        <div className="flex justify-center  h-65">
-          <img
+        <div className="flex justify-center h-65">
+          <Image
             src={imageUrl}
             alt="Pizza"
             width={215}
@@ -31,7 +34,9 @@ export const ProductCard = ({
           />
         </div>
         <Title text={name} size="sm" className="mb-1 mt-3 font-bold" />
-        <p className="text-sm text-gray-400">random text</p>
+        <p className="text-sm text-gray-400">
+          {description ? description : "random text"}
+        </p>
         <div className="flex justify-between items-center mt-4">
           <span className="text-[20px]">
             from <b>{price}kr</b>

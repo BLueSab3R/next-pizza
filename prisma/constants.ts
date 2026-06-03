@@ -155,7 +155,7 @@ export const products = [
       "https://pizzahut-images.futureordering.com/images/product/1348/D3B124115DAE125532F7D0DD410E47ACD/760x706.jpg",
     description:
       "Ciabatta, BBQ Sås, Mozzarella, Pulled Beef, Jalapeños, Isbergssallad, Vitlökssås",
-    categoryId: 5,
+    categoryId: 4,
   },
 
   {
@@ -172,7 +172,7 @@ export const products = [
       "https://pizzahut-images.futureordering.com/images/product/1351/71A6036F1D70ECA39F836885D49DEF66D/760x706.jpg",
     description:
       "Ciabatta, Mozzarella, Grillad Kyckling, Cocktailtomater, Isbergssallad, Majonnäs",
-    categoryId: 5,
+    categoryId: 4,
   },
   {
     name: "VITLÖKSBRÖD",
@@ -200,35 +200,35 @@ export const products = [
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/1515/1A4BBB1298CC94A6F97FD5E4DA9A5928D/760x706.jpg",
     description: "Frasiga bollar fyllda med smält ost och jalapenos",
-    categoryId: 5,
+    categoryId: 3,
   },
   {
     name: "POMMES FRITES",
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/1516/C1D900100D5D33D47CD7A50003CB9B80D/760x706.jpg",
     description: "Klassiska tunna och krispiga pommes frites",
-    categoryId: 5,
+    categoryId: 3,
   },
   {
     name: "SALLADSBUFFÉ",
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/342/B2DCC3B947737E046167103C7C865A3BD/380x354.png",
     description: "Välj dina favoriter från vår fräscha salladsbar",
-    categoryId: 5,
+    categoryId: 3,
   },
   {
     name: "CHEESE TRIANGLES",
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/1643/97EDA96C7F9C348DE98757B626B4F22DD/380x354.jpg",
     description: "Friterade osttrianglar",
-    categoryId: 5,
+    categoryId: 3,
   },
   {
     name: "LÖKRINGAR",
     imageUrl:
       "https://pizzahut-images.futureordering.com/images/product/1640/3380856C3C4F60283F5084BB66CBDE4CD/380x354.jpg",
     description: "Krispiga friterade lökringar",
-    categoryId: 5,
+    categoryId: 3,
   },
   {
     name: "Soda",
@@ -247,14 +247,14 @@ export const products = [
   {
     name: "Koffe",
     imageUrl:
-      "  https://pizzahut-images.futureordering.com/images/product/418/107A522170C69959238BC78283503C6BD/760x706.jpg",
+      "https://pizzahut-images.futureordering.com/images/product/418/107A522170C69959238BC78283503C6BD/760x706.jpg",
     description: "Self-service at the soda machine",
     categoryId: 5,
   },
   {
     name: "Tea",
     imageUrl:
-      "  https://pizzahut-images.futureordering.com/images/product/419/D5427008005E84D3E598D432F006A259D/760x706.jpg",
+      "https://pizzahut-images.futureordering.com/images/product/419/D5427008005E84D3E598D432F006A259D/760x706.jpg",
     description: "Self-service at the soda machine",
     categoryId: 5,
   },

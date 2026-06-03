@@ -1,8 +1,8 @@
+import { PrismaPg } from "@prisma/adapter-pg";
+import { Prisma, PrismaClient } from "@prisma/client";
+import { hashSync } from "bcrypt";
 import "dotenv/config";
 import { Pool } from "pg";
-import { PrismaPg } from "@prisma/adapter-pg";
-import { PrismaClient, Prisma } from "@prisma/client";
-import { hashSync } from "bcrypt";
 import { categories, ingredients, products } from "./constants";
 
 const connectionString = `${process.env.DATABASE_URL}`;
@@ -111,7 +111,6 @@ async function up() {
         size: 40,
       }),
 
-      //Pulled Beef BBQ
       generateProductItem({
         productId: secondPizza.id,
         pizzaType: 1,
@@ -142,7 +141,7 @@ async function up() {
         pizzaType: 2,
         size: 40,
       }),
-      //vesuvio
+
       generateProductItem({
         productId: thirdPizza.id,
         pizzaType: 1,
@@ -203,6 +202,24 @@ async function up() {
       }),
       generateProductItem({
         productId: 15,
+      }),
+      generateProductItem({
+        productId: 16,
+      }),
+      generateProductItem({
+        productId: 17,
+      }),
+      generateProductItem({
+        productId: 18,
+      }),
+      generateProductItem({
+        productId: 19,
+      }),
+      generateProductItem({
+        productId: 20,
+      }),
+      generateProductItem({
+        productId: 21,
       }),
     ],
   });

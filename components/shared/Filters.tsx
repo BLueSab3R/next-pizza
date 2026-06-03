@@ -1,10 +1,10 @@
 "use client";
 
+import { Ingredient } from "@prisma/client";
 import { useMemo } from "react";
-import { Title, RangeSlider, CheckBoxFilterGroup, SelectedList } from "./index";
 import { Input } from "../ui";
 import { useFilters, useIngredients, useQueryFilters } from "./hooks";
-import { Ingredient } from "@prisma/client";
+import { CheckBoxFilterGroup, RangeSlider, SelectedList, Title } from "./index";
 
 interface Props {
   className?: string;
@@ -36,7 +36,7 @@ export const Filters = ({ className }: Props) => {
         name: foundIngredient ? foundIngredient.text : "",
         value: foundIngredient?.value ? foundIngredient?.value : "",
       };
-    },
+    }
   );
 
   const updatePrices = (prices: number[]) => {
@@ -71,8 +71,8 @@ export const Filters = ({ className }: Props) => {
         />
       </div>
       <div className="mt-5 border-y border-y-neutral-100 py-6 pb-7">
-        <p>Price from and to</p>
-        <div className="flex  gap-3 mb-5">
+        <p className="font-bold">Price from and to:</p>
+        <div className="flex  gap-3 mb-5 mt-5">
           <Input
             type="number"
             placeholder="0"
