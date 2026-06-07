@@ -31,9 +31,7 @@ const mapClassNameBySize = {
 export const Title = ({ size = "sm", text, className }: Props) => {
   const Tag = mapTagBySize[size as TitleSize];
   return (
-    <Tag
-      className={cn("font-bold font-sans", mapClassNameBySize[size], className)}
-    >
+    <Tag className={cn("font-bold", mapClassNameBySize[size], className)}>
       {text}
     </Tag>
   );

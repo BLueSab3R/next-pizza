@@ -15,7 +15,7 @@ html {
 
   --color-foreground: var(--foreground);
 
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-nunito);
 
   --font-mono: var(--font-geist-mono);
 
@@ -228,6 +228,7 @@ html {
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: var(--font-nunito);
   }
 }

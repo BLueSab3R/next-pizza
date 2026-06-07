@@ -13,14 +13,14 @@ type Product = {
   name: string;
   imageUrl: string;
   variations: ProductItem[];
-  description?: string;
+  description: string | null;
 };
 
 type Props = {
   title: string;
   categoryId: number;
   items: Product[];
-  listClassName?: number;
+  listClassName?: string;
   className?: string;
 };
 export const ProductGroupList = ({
