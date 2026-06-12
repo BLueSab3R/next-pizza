@@ -9,7 +9,7 @@ interface Props {
   name: string;
   price: number;
   imageUrl: string;
-  description?: string;
+  description: string | null;
   className?: string;
 }
 

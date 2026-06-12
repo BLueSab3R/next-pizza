@@ -1,6 +1,4 @@
-import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import { Header } from "../components/shared/index";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -10,11 +8,6 @@ const nunito = Nunito({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Next pizza | Main",
-  description: "Delicious pizza",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -22,11 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link data-rh="true" rel="icon" href="/logo.png" />
+      </head>
       <body className={`${nunito.variable} font-sans antialiased`}>
-        <main className="min-h-screen">
-          <Header />
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   );

@@ -3,6 +3,7 @@ export { CheckBoxFilterGroup } from "./CheckBoxFilterGroup";
 export { Container } from "./Container";
 export { FilterCheckBox } from "./FilterCheckBox";
 export { Filters } from "./Filters";
+export { GroupVariants } from "./GroupVariants";
 export { Header } from "./Header";
 export { ProductImage } from "./ProductImage";
 export { RangeSlider } from "./RangeSlider";

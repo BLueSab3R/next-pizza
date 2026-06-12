@@ -1,4 +1,9 @@
-import { Container, ProductImage, Title } from "@/components/shared";
+import {
+  Container,
+  GroupVariants,
+  ProductImage,
+  Title,
+} from "@/components/shared";
 import prisma from "@/prisma/prisma-client";
 import { notFound } from "next/navigation";
 
@@ -24,6 +29,14 @@ export default async function ProductPage({
             className="font-extrabold mb-1"
           />
           <p className="text-gray-400">{product?.description || "test"}</p>
+          <GroupVariants
+            selectedValue="2"
+            items={[
+              { name: "Small", value: "1" },
+              { name: "Medium", value: "2" },
+              { name: "Big", value: "3", disabled: true },
+            ]}
+          />
         </div>
       </div>
     </Container>
