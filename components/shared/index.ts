@@ -5,6 +5,7 @@ export { FilterCheckBox } from "./FilterCheckBox";
 export { Filters } from "./Filters";
 export { GroupVariants } from "./GroupVariants";
 export { Header } from "./Header";
+export * from "./modals";
 export { ProductImage } from "./ProductImage";
 export { RangeSlider } from "./RangeSlider";
 export { SearchInput } from "./SearchInput";
