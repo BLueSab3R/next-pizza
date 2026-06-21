@@ -1,5 +1,4 @@
-import React from "react";
-import { Slider } from "../ui";
+import { Slider } from "@/shared/ui";
 
 type Props = {
   className?: string;

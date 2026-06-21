@@ -9,6 +9,7 @@ export { GroupVariants } from "./GroupVariants";
 export { Header } from "./Header";
 export * from "./modals";
 export { PizzaImage } from "./PizzaImage";
+export { ProductGroupList } from "./ProductGroupList";
 export { RangeSlider } from "./RangeSlider";
 export { SearchInput } from "./SearchInput";
 export { SelectedList } from "./SelectedList";

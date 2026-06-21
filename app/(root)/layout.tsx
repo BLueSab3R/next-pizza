@@ -1,5 +1,5 @@
+import { Header } from "@/shared/components";
 import { Metadata } from "next";
-import { Header } from "../../components/shared/index";
 import "../globals.css";
 
 export const metadata: Metadata = {

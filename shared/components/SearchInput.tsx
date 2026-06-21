@@ -15,7 +15,7 @@ interface Props {
 
 export const SearchInput = ({ className }: Props) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const searchRef = useRef<HTMLDivElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null!);
   const [focused, setFocused] = useState(false);
   const [products, setProducts] = useState<Product[]>([]);
 

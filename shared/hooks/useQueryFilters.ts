@@ -1,11 +1,16 @@
-import qs from "qs";
-import { useEffect } from "react";
-import { Filters } from "./useFilters";
 import { useRouter } from "next/navigation";
+import qs from "qs";
+import { useEffect, useRef } from "react";
+import { Filters } from "./useFilters";
 
 export const useQueryFilters = (filters: Filters) => {
   const router = useRouter();
+  const isMounted = useRef(false);
   useEffect(() => {
+    if (!isMounted.current) {
+      isMounted.current = true;
+      return;
+    }
     const params = {
       ...filters.prices,
       pizzaTypes: Array.from(filters.pizzaTypes),
@@ -15,7 +20,9 @@ export const useQueryFilters = (filters: Filters) => {
     const query = qs.stringify(params, {
       arrayFormat: "comma",
     });
-    router.push(`?${query}`, { scroll: false });
+    const currentHash =
+      typeof window !== "undefined" ? window.location.hash : "";
+    router.push(`?${query}${currentHash}`, { scroll: false });
   }, [
     filters.prices,
     filters.pizzaTypes,

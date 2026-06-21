@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/shared/lib/utils";
-import { useCategoryStore } from "@/store/category";
+import { useCategoryStore } from "@/shared/store/category";
 import { ProductItem } from "@prisma/client";
 import { useEffect, useRef } from "react";
 import { useIntersection } from "../../shared/hooks/useIntersection";

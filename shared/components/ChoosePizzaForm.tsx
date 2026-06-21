@@ -1,36 +1,33 @@
 import { cn } from "@/shared/lib/utils";
-import Image from "next/image";
-import { Button } from "../ui";
-import { Title } from "./index";
+import { Button } from "@/shared/ui";
+import { Ingredient } from "@prisma/client";
+import { PizzaImage, Title } from "./index";
 
 interface Props {
   imageUrl: string;
   name: string;
+  ingredients: Ingredient[];
   items?: [];
   description?: string;
   onClickAdd?: VoidFunction;
   className: string;
 }
 
-export const ChooseProductForm = ({
+export const ChoosePizzaForm = ({
   imageUrl,
   name,
+  ingredients,
   description,
   items,
   onClickAdd,
   className,
 }: Props) => {
   const totalPrice = 120;
+  const size = 30;
   return (
     <div className={cn(className, "flex flex-1")}>
       <div className="flex items-center justify-center flex-1 relative w-full">
-        <Image
-          src={imageUrl}
-          alt={name}
-          width={350}
-          height={350}
-          className="relative left-2 top-2 transition-all z-10 duration-300 w-87.5 h-87.5"
-        />
+        <PizzaImage size={size} imageUrl={imageUrl} />
       </div>
       <div className="bg-[#f7f6f5] w-122.5 p-7">
         <Title text={name} size="md" className="font-extrabold mb-1" />

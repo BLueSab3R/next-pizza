@@ -1,5 +1,6 @@
 "use client";
 
+import { Input } from "@/shared/ui";
 import { Ingredient } from "@prisma/client";
 import { useMemo } from "react";
 import {
@@ -7,7 +8,6 @@ import {
   useIngredients,
   useQueryFilters,
 } from "../../shared/hooks";
-import { Input } from "../ui";
 import { CheckBoxFilterGroup, RangeSlider, SelectedList, Title } from "./index";
 
 interface Props {

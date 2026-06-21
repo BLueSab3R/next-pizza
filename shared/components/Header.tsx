@@ -1,9 +1,9 @@
 "use client";
 
+import { Button } from "@/shared/ui";
 import { ArrowRight, ShoppingCart, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "../ui";
 import { Container, SearchInput } from "./index";
 
 interface Props {

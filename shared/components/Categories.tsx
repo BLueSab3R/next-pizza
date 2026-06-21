@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/shared/lib/utils";
-import { useCategoryStore } from "@/store/category";
+import { useCategoryStore } from "@/shared/store/category";
 import { Category } from "@prisma/client";
 
 interface Props {
@@ -32,7 +32,7 @@ export const Categories = ({ items, className }: Props) => {
               "bg-white shadow-md shadow-gray-200 text-primary"
           )}
           key={id}
-          href={`/#${name}`}
+          href={`#${name}`}
         >
           {name}
         </a>

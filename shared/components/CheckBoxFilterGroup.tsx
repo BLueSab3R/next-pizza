@@ -1,8 +1,11 @@
 "use client";
 
+import { FilterCheckBox } from "@/shared/components/index";
+
+import { Input, Skeleton } from "@/shared/ui";
 import { useState } from "react";
-import { FilterCheckBox, FilterCheckBoxProps } from "../shared/FilterCheckBox";
-import { Input, Skeleton } from "../ui";
+import { FilterCheckBoxProps } from "./FilterCheckBox";
+
 type Item = FilterCheckBoxProps;
 
 interface Props {
@@ -37,7 +40,7 @@ export const CheckBoxFilterGroup = ({
 
   const displayedItems = showAll
     ? items.filter((item) =>
-        item.text.toLowerCase().includes(searchFilter.toLocaleLowerCase()),
+        item.text.toLowerCase().includes(searchFilter.toLocaleLowerCase())
       )
     : (defaultItems || items).slice(0, limit);
 
