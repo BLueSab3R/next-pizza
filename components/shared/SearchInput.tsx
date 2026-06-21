@@ -1,14 +1,14 @@
 "use client";
 
-import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState, useRef, useEffect } from "react";
-import { useClickAway } from "./hooks/useClickAway";
-import Link from "next/link";
-import Image from "next/image";
-import { Product } from "@prisma/client";
 import { Api } from "@/services/api-clients";
-import { useDebounce } from "react-use"; // Використовуємо все з react-use!
+import { Product } from "@prisma/client";
+import { Search } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRef, useState } from "react";
+import { useDebounce } from "react-use";
+import { useClickAway } from "./hooks/useClickAway";
 interface Props {
   className?: string;
 }
@@ -31,14 +31,14 @@ export const SearchInput = ({ className }: Props) => {
   useDebounce(
     async () => {
       try {
-        const response = Api.products.search(searchQuery);
+        const response = await Api.products.search(searchQuery);
         setProducts(response);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     },
     150,
-    [searchQuery],
+    [searchQuery]
   );
   return (
     <>
@@ -49,7 +49,7 @@ export const SearchInput = ({ className }: Props) => {
         ref={searchRef}
         className={cn(
           "flex rounded-2xl flex-1 justify-between relative h-11 z-30",
-          className,
+          className
         )}
       >
         <Search className="absolute top-1/2 translate-y-[-50%] left-3 h-5 text-gray-500" />
@@ -66,7 +66,7 @@ export const SearchInput = ({ className }: Props) => {
           <div
             className={cn(
               "absolute w-full bg-white rounded-xl py-2 top-14 shadow-md transition-all  duration-300 invisible opacity-0    z-30",
-              focused && "visible opacity-100 top-12",
+              focused && "visible opacity-100 top-12"
             )}
           >
             {products.map((product) => (

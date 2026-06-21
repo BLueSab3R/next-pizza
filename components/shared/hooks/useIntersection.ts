@@ -1,4 +1,4 @@
-import { useEffect, useState, RefObject } from "react";
+import { RefObject, useEffect, useState } from "react";
 
 export const useIntersection = (ref: RefObject<HTMLElement | null>) => {
   const [intersection, setIntersection] =
@@ -11,7 +11,7 @@ export const useIntersection = (ref: RefObject<HTMLElement | null>) => {
       ([entry]) => {
         setIntersection(entry);
       },
-      { threshold: 0.4 },
+      { threshold: 0.45 }
     );
 
     observer.observe(ref.current);

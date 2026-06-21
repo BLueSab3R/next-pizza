@@ -1,12 +1,14 @@
 export { Categories } from "./Categories";
 export { CheckBoxFilterGroup } from "./CheckBoxFilterGroup";
+export { ChoosePizzaForm } from "./ChoosePizzaForm";
+export { ChooseProductForm } from "./ChooseProductForm";
 export { Container } from "./Container";
 export { FilterCheckBox } from "./FilterCheckBox";
 export { Filters } from "./Filters";
 export { GroupVariants } from "./GroupVariants";
 export { Header } from "./Header";
 export * from "./modals";
-export { ProductImage } from "./ProductImage";
+export { PizzaImage } from "./PizzaImage";
 export { RangeSlider } from "./RangeSlider";
 export { SearchInput } from "./SearchInput";
 export { SelectedList } from "./SelectedList";

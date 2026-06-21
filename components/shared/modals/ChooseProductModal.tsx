@@ -2,21 +2,43 @@
 
 import { Dialog } from "@/components/ui";
 import { DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { Product } from "@prisma/client";
+import { cn } from "@/lib/utils";
+import { ProductWithRelations } from "@/types/prisma";
 import { useRouter } from "next/navigation";
+import { ChoosePizzaForm, ChooseProductForm } from "../index";
 
 interface Props {
-  product: Product;
+  product: ProductWithRelations;
+  className?: string;
 }
 
-export const ChooseProductModal = ({ product }: Props) => {
+export const ChooseProductModal = ({ product, className }: Props) => {
   const router = useRouter();
+  const isPizzaForm = Boolean(product.variations[0].pizzaType);
 
   return (
     <Dialog onOpenChange={() => router.back()} open={Boolean(product)}>
-      <DialogContent className="p-0 max-w-265 w-265 min-h-125 bg-white overflow-hidden">
-        {/* <Title text={product.name} /> */}
-        <DialogTitle>{product.name}</DialogTitle>
+      <DialogContent
+        className={cn(
+          className,
+          "p-0 max-w-265 w-265 min-h-125 bg-white overflow-hidden"
+        )}
+      >
+        {isPizzaForm ? (
+          <ChoosePizzaForm
+            imageUrl={product.imageUrl}
+            name={product.name}
+            description={product.description || ""}
+            ingredients={[]}
+          />
+        ) : (
+          <ChooseProductForm
+            imageUrl={product.imageUrl}
+            name={product.name}
+            description={product.description || ""}
+          />
+        )}
+        <DialogTitle className="sr-only">{product.name}</DialogTitle>
       </DialogContent>
     </Dialog>
   );
