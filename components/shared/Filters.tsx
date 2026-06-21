@@ -2,8 +2,12 @@
 
 import { Ingredient } from "@prisma/client";
 import { useMemo } from "react";
+import {
+  useFilters,
+  useIngredients,
+  useQueryFilters,
+} from "../../shared/hooks";
 import { Input } from "../ui";
-import { useFilters, useIngredients, useQueryFilters } from "./hooks";
 import { CheckBoxFilterGroup, RangeSlider, SelectedList, Title } from "./index";
 
 interface Props {

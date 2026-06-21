@@ -1,12 +1,12 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { useCategoryStore } from "@/store/category";
 import { ProductItem } from "@prisma/client";
 import { useEffect, useRef } from "react";
+import { useIntersection } from "../../shared/hooks/useIntersection";
 import { ProductCard } from "./ProductCard";
 import { Title } from "./Title";
-import { useIntersection } from "./hooks/useIntersection";
 
 type Product = {
   id: number;

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { Ingredient } from "@prisma/client";
 import { Button } from "../ui";
 import { PizzaImage, Title } from "./index";

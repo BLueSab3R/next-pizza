@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { Category } from "@prisma/client";
 import { useEffect, useState } from "react";
 import { Categories, Container, Sort } from "./index";

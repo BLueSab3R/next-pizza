@@ -2,7 +2,7 @@
 
 import { Dialog } from "@/components/ui";
 import { DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { ProductWithRelations } from "@/types/prisma";
 import { useRouter } from "next/navigation";
 import { ChoosePizzaForm, ChooseProductForm } from "../index";
