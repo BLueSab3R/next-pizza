@@ -1,10 +1,10 @@
 "use client";
 
+import { useIntersection } from "@/shared/hooks/useIntersection";
 import { cn } from "@/shared/lib/utils";
 import { useCategoryStore } from "@/shared/store/category";
 import { ProductItem } from "@prisma/client";
 import { useEffect, useRef } from "react";
-import { useIntersection } from "../../shared/hooks/useIntersection";
 import { ProductCard } from "./ProductCard";
 import { Title } from "./Title";
 

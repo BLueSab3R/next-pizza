@@ -1,10 +1,10 @@
+import prisma from "@/prisma/prisma-client";
 import {
   Container,
   GroupVariants,
   PizzaImage,
   Title,
-} from "@/components/shared";
-import prisma from "@/prisma/prisma-client";
+} from "@/shared/components/";
 import { notFound } from "next/navigation";
 
 export default async function ProductPage({

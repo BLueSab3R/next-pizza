@@ -1,11 +1,11 @@
 "use client";
 
+import { ChoosePizzaForm, ChooseProductForm } from "@/shared/components/index";
 import { cn } from "@/shared/lib/utils";
 import { Dialog } from "@/shared/ui";
 import { DialogContent, DialogTitle } from "@/shared/ui/dialog";
 import { ProductWithRelations } from "@/types/prisma";
 import { useRouter } from "next/navigation";
-import { ChoosePizzaForm, ChooseProductForm } from "../index";
 
 interface Props {
   product: ProductWithRelations;
@@ -21,7 +21,7 @@ export const ChooseProductModal = ({ product, className }: Props) => {
       <DialogContent
         className={cn(
           className,
-          "p-0 max-w-265 w-265 min-h-125 bg-white overflow-hidden"
+          "p-0 max-w-265 w-265 min-h-140 bg-white overflow-hidden"
         )}
       >
         {isPizzaForm ? (

@@ -20,8 +20,7 @@ export const useQueryFilters = (filters: Filters) => {
     const query = qs.stringify(params, {
       arrayFormat: "comma",
     });
-    const currentHash =
-      typeof window !== "undefined" ? window.location.hash : "";
+    const currentHash = "";
     router.push(`?${query}${currentHash}`, { scroll: false });
   }, [
     filters.prices,

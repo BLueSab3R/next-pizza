@@ -27,7 +27,7 @@ export const Categories = ({ items, className }: Props) => {
         <a
           onClick={() => handleCategoryClick(id)}
           className={cn(
-            "flex items-center font-bold  h-11 rounded-2xl px-5 cursor-pointer",
+            "flex items-center font-bold  h-11 rounded-2xl px-5 cursor-pointer caret-transparent",
             activeCategoryId === id &&
               "bg-white shadow-md shadow-gray-200 text-primary"
           )}

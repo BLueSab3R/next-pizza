@@ -1,13 +1,9 @@
 "use client";
 
+import { useFilters, useIngredients, useQueryFilters } from "@/shared/hooks";
 import { Input } from "@/shared/ui";
 import { Ingredient } from "@prisma/client";
 import { useMemo } from "react";
-import {
-  useFilters,
-  useIngredients,
-  useQueryFilters,
-} from "../../shared/hooks";
 import { CheckBoxFilterGroup, RangeSlider, SelectedList, Title } from "./index";
 
 interface Props {
@@ -72,6 +68,7 @@ export const Filters = ({ className }: Props) => {
           ]}
           onClickCheckbox={filters.setSizes}
           selected={filters.selectedSizes}
+          className="caret-transparent"
         />
       </div>
       <div className="mt-5 border-y border-y-neutral-100 py-6 pb-7">

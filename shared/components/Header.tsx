@@ -17,7 +17,7 @@ export const Header = ({ className }: Props) => {
         <Link href="/">
           <div className="flex items-center gap-4">
             <Image
-              src="/logo1.png"
+              src="/logo.png"
               loading="eager"
               alt="logo"
               width={96}

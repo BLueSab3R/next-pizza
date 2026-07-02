@@ -1,6 +1,7 @@
 "use client";
 
 import { Api } from "@/services/api-clients";
+import { useClickAway } from "@/shared/hooks/useClickAway";
 import { cn } from "@/shared/lib/utils";
 import { Product } from "@prisma/client";
 import { Search } from "lucide-react";
@@ -8,7 +9,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { useDebounce } from "react-use";
-import { useClickAway } from "../../shared/hooks/useClickAway";
 interface Props {
   className?: string;
 }

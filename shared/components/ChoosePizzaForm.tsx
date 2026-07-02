@@ -1,7 +1,11 @@
+"use client";
+
+import { pizzaSize, pizzaSizes, pizzaType } from "@/shared/constants/pizza";
 import { cn } from "@/shared/lib/utils";
 import { Button } from "@/shared/ui";
 import { Ingredient } from "@prisma/client";
-import { PizzaImage, Title } from "./index";
+import { useState } from "react";
+import { GroupVariants, PizzaImage, Title } from "./index";
 
 interface Props {
   imageUrl: string;
@@ -22,8 +26,9 @@ export const ChoosePizzaForm = ({
   onClickAdd,
   className,
 }: Props) => {
+  const [size, setSize] = useState<pizzaSize>(20);
+  const [type, setType] = useState<pizzaType>(1);
   const totalPrice = 120;
-  const size = 30;
   return (
     <div className={cn(className, "flex flex-1")}>
       <div className="flex items-center justify-center flex-1 relative w-full">
@@ -32,6 +37,11 @@ export const ChoosePizzaForm = ({
       <div className="bg-[#f7f6f5] w-122.5 p-7">
         <Title text={name} size="md" className="font-extrabold mb-1" />
         <p className="text-gray-400">{description}</p>
+        <GroupVariants
+          items={pizzaSizes}
+          value={String(size)}
+          onClick={(value) => setSize(Number(value) as pizzaSize)}
+        />
         <Button className="h-13.75 px-10 text-base rounded-[18px] w-full mt-10">
           Add to cart for {totalPrice}
         </Button>

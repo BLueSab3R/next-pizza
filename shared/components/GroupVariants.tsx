@@ -5,7 +5,7 @@ import { cn } from "@/shared/lib/utils";
 interface Props {
   className?: string;
   onClick?: (value: Variant["value"]) => void;
-  selectedValue?: Variant["value"];
+  value?: Variant["value"];
   items: readonly Variant[];
 }
 
@@ -15,12 +15,7 @@ type Variant = {
   disabled?: boolean;
 };
 
-export const GroupVariants = ({
-  items,
-  selectedValue,
-  onClick,
-  className,
-}: Props) => {
+export const GroupVariants = ({ items, value, onClick, className }: Props) => {
   return (
     <div
       className={cn(
@@ -33,9 +28,9 @@ export const GroupVariants = ({
           onClick={() => onClick?.(item.value)}
           key={item.name}
           className={cn(
-            "flex items-center justify-center px-5 h-7.5 flex-1 rounded-3xl transition-all duration-300 text-sm",
+            "flex items-center cursor-pointer justify-center px-5 h-7.5 flex-1 rounded-3xl transition-all duration-300 text-sm",
             {
-              "bg-white shadow": item.value === selectedValue,
+              "bg-white shadow": item.value === value,
               "text-gray-500 opacity-50  cursor-not-allowed": item.disabled,
             }
           )}
