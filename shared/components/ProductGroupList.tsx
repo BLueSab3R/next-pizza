@@ -34,6 +34,8 @@ export const ProductGroupList = ({
   const intersectionRef = useRef<HTMLDivElement>(null);
   const intersection = useIntersection(intersectionRef);
 
+  console.log(items);
+
   useEffect(() => {
     if (intersection?.isIntersecting) {
       setActiveCategoryId(categoryId);

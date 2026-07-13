@@ -1,9 +1,9 @@
+import { cn } from "@/shared/lib/utils";
 import { Button } from "@/shared/ui";
 import { Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Title } from "./Title";
-
 interface Props {
   id: number;
   name: string;
@@ -22,8 +22,8 @@ export const ProductCard = ({
   description,
 }: Props) => {
   return (
-    <div className={className}>
-      <Link href={`/product/${id}`}>
+    <div className={cn("h-full", className)}>
+      <Link href={`/product/${id}`} className="flex flex-col h-full">
         <div className="flex justify-center h-65">
           <Image
             src={imageUrl}
@@ -37,7 +37,7 @@ export const ProductCard = ({
         <p className="text-sm text-gray-400">
           {description ? description : "random text"}
         </p>
-        <div className="flex justify-between items-center mt-4">
+        <div className="flex justify-between items-center mt-auto">
           <span className="text-[20px]">
             from <b>{price}kr</b>
           </span>

@@ -68,6 +68,8 @@ async function up() {
       ingredients: {
         connect: ingredients.slice(0, 5),
       },
+      description:
+        "Loaded with a double portion of smoky pepperoni and extra mozzarella for the ultimate classic flavor.",
     },
   });
   const secondPizza = await prisma.product.create({
@@ -79,6 +81,8 @@ async function up() {
       ingredients: {
         connect: ingredients.slice(5, 10),
       },
+      description:
+        "Tender, slow-cooked beef paired with rich, smoky BBQ sauce and crisp red onions.",
     },
   });
   const thirdPizza = await prisma.product.create({
@@ -90,6 +94,8 @@ async function up() {
       ingredients: {
         connect: ingredients.slice(10, 15),
       },
+      description:
+        "A timeless Italian favorite featuring classic ham and melted mozzarella over a rich tomato base.",
     },
   });
 

@@ -14,10 +14,10 @@ export const pizzaSizes = Object.entries(mapPizzaSize).map(([value, name]) => ({
   name,
 }));
 
-export const pizzaTypes = Object.entries(mapPizzaType).map(([name, value]) => ({
+export const pizzaTypes = Object.entries(mapPizzaType).map(([value, name]) => ({
   name,
   value,
 }));
 
-export type pizzaSize = keyof typeof mapPizzaSize;
-export type pizzaType = keyof typeof mapPizzaType;
+export type PizzaSize = keyof typeof mapPizzaSize;
+export type PizzaType = keyof typeof mapPizzaType;

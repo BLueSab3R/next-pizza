@@ -15,7 +15,7 @@ interface Props {
 export const ChooseProductModal = ({ product, className }: Props) => {
   const router = useRouter();
   const isPizzaForm = Boolean(product.variations[0].pizzaType);
-
+  console.log(product);
   return (
     <Dialog onOpenChange={() => router.back()} open={Boolean(product)}>
       <DialogContent
@@ -29,7 +29,7 @@ export const ChooseProductModal = ({ product, className }: Props) => {
             imageUrl={product.imageUrl}
             name={product.name}
             description={product.description || ""}
-            ingredients={[]}
+            ingredients={product.ingredients}
           />
         ) : (
           <ChooseProductForm
