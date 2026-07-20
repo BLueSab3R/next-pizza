@@ -39,7 +39,7 @@ export const ProductCard = ({
         </p>
         <div className="flex justify-between items-center mt-auto">
           <span className="text-[20px]">
-            from <b>{price}kr</b>
+            from <b>{price}$</b>
           </span>
           <Button variant="secondary" className="text-base font-bold">
             <Plus size={20} className=" mr-1" />

@@ -11,7 +11,7 @@ const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
 const randomNumber = (min: number, max: number) => {
-  return Math.floor(Math.random() * (max - min) * 10 + min * 10) / 10;
+  return Math.floor(Math.random() * (max - min) * 2 + min * 2) / 2;
 };
 
 const generateProductItem = ({
@@ -25,7 +25,7 @@ const generateProductItem = ({
 }): Prisma.ProductItemUncheckedCreateInput => {
   return {
     productId,
-    price: randomNumber(100, 250),
+    price: randomNumber(5, 25),
     pizzaType,
     size,
   };
@@ -66,7 +66,7 @@ async function up() {
         "https://pizzahut-images.futureordering.com/images/product/4/FA35B15078575E1B43939C02B7EAC9E0D/760x706.jpg",
       categoryId: 1,
       ingredients: {
-        connect: ingredients.slice(0, 5),
+        connect: ingredients.slice(0, 9),
       },
       description:
         "Loaded with a double portion of smoky pepperoni and extra mozzarella for the ultimate classic flavor.",
@@ -79,7 +79,7 @@ async function up() {
         "https://pizzahut-images.futureordering.com/images/product/68/82CF8DA4494063613FC66326F067A35CD/760x706.jpg",
       categoryId: 1,
       ingredients: {
-        connect: ingredients.slice(5, 10),
+        connect: ingredients.slice(4, 15),
       },
       description:
         "Tender, slow-cooked beef paired with rich, smoky BBQ sauce and crisp red onions.",
@@ -92,7 +92,7 @@ async function up() {
         "https://pizzahut-images.futureordering.com/images/product/74/B3B1A320DAB652FDBCE346B348D1C042D/760x706.jpg",
       categoryId: 1,
       ingredients: {
-        connect: ingredients.slice(10, 15),
+        connect: ingredients.slice(0, 15),
       },
       description:
         "A timeless Italian favorite featuring classic ham and melted mozzarella over a rich tomato base.",
@@ -104,12 +104,22 @@ async function up() {
       generateProductItem({
         productId: firstPizza.id,
         pizzaType: 1,
+        size: 20,
+      }),
+      generateProductItem({
+        productId: firstPizza.id,
+        pizzaType: 1,
         size: 30,
       }),
       generateProductItem({
         productId: firstPizza.id,
-        pizzaType: 2,
+        pizzaType: 1,
         size: 40,
+      }),
+      generateProductItem({
+        productId: firstPizza.id,
+        pizzaType: 2,
+        size: 30,
       }),
       generateProductItem({
         productId: firstPizza.id,

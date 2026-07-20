@@ -1,5 +1,3 @@
-import React from "react";
-
 interface SelectedItem {
   id: string;
   name: string;

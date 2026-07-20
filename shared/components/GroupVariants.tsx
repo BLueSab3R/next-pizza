@@ -27,6 +27,7 @@ export const GroupVariants = ({ items, value, onClick, className }: Props) => {
         <button
           onClick={() => onClick?.(item.value)}
           key={item.name}
+          disabled={item.disabled}
           className={cn(
             "flex items-center cursor-pointer justify-center px-5 h-7.5 flex-1 rounded-3xl transition-all duration-300 text-sm",
             {
