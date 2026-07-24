@@ -129,21 +129,6 @@ async function up() {
 
       generateProductItem({
         productId: secondPizza.id,
-        pizzaType: 1,
-        size: 20,
-      }),
-      generateProductItem({
-        productId: secondPizza.id,
-        pizzaType: 1,
-        size: 30,
-      }),
-      generateProductItem({
-        productId: secondPizza.id,
-        pizzaType: 1,
-        size: 40,
-      }),
-      generateProductItem({
-        productId: secondPizza.id,
         pizzaType: 2,
         size: 20,
       }),
@@ -165,8 +150,13 @@ async function up() {
       }),
       generateProductItem({
         productId: thirdPizza.id,
-        pizzaType: 2,
+        pizzaType: 1,
         size: 40,
+      }),
+      generateProductItem({
+        productId: thirdPizza.id,
+        pizzaType: 2,
+        size: 30,
       }),
       generateProductItem({
         productId: thirdPizza.id,
