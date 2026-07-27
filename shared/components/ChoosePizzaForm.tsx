@@ -5,9 +5,8 @@ import { Ingredient, ProductItem } from "@prisma/client";
 import { PizzaSize, PizzaType } from "@/shared/constants/pizza";
 import { cn } from "@/shared/lib/utils";
 import { Button } from "@/shared/ui";
-import { getPizzaDetails } from "../lib/index";
+import { getPizzaDetails, usePizzaOptions } from "../lib/index";
 
-import { usePizzaOptions } from "../lib/use-pizza-option";
 import { GroupVariants, IngredientItem, PizzaImage, Title } from "./index";
 
 interface Props {

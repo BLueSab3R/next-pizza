@@ -1,10 +1,10 @@
 "use client";
 
 import { Button } from "@/shared/ui";
-import { ArrowRight, ShoppingCart, User } from "lucide-react";
+import { User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Container, SearchInput } from "./index";
+import { CartButton, Container, SearchInput } from "./index";
 
 interface Props {
   className?: string;
@@ -40,18 +40,7 @@ export const Header = ({ className }: Props) => {
             Login
           </Button>
           <div>
-            <Button className="group relative cursor-pointer">
-              <b> 0$</b>
-              <span className="h-full w-px bg-white/30 mx-2" />
-              <div className="flex items-center gap-1 transition duration-300 group-hover:opacity-0">
-                <ShoppingCart className="h-4 w-4 relative" strokeWidth={2} />
-                <b>0</b>
-              </div>
-              <ArrowRight
-                size={20}
-                className="absolute right-5 transition duration-300 -translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0"
-              />{" "}
-            </Button>
+            <CartButton />
           </div>
         </div>
       </Container>
