@@ -8,13 +8,21 @@ interface Props {
 }
 
 export const CartButton = ({ className }: Props) => {
-  const { totalAmount, items, loading } = useCart();
+  // const { totalAmount, items, loading } = useCart();
+  const loading = true;
+  const totalAmount = 12;
+  const items = [
+    {
+      id: 1,
+      name: "test",
+    },
+  ];
   return (
     <CartDrawer>
       <Button
         loading={loading}
         className={cn(className, "group relative cursor-pointer", {
-          "w-[105px]": loading,
+          "w-26.25": loading,
           className,
         })}
       >

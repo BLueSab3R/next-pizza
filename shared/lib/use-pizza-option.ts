@@ -1,3 +1,5 @@
+"use client";
+
 import { PizzaSize, PizzaType, pizzaTypes } from "@/shared/constants/pizza";
 import { ProductItem } from "@prisma/client";
 import { useEffect, useState } from "react";

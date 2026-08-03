@@ -1,8 +1,10 @@
+"use client";
+
 import { RefObject, useEffect } from "react";
 
 export const useClickAway = <T extends HTMLElement>(
   ref: RefObject<T>,
-  handler: () => void,
+  handler: () => void
 ) => {
   useEffect(() => {
     const element = ref?.current;

@@ -3,7 +3,7 @@ import { Prisma, PrismaClient } from "@prisma/client";
 import { hashSync } from "bcrypt";
 import "dotenv/config";
 import { Pool } from "pg";
-import { categories, ingredients, products } from "./constants";
+import { categories, products } from "./constants";
 
 const connectionString = `${process.env.DATABASE_URL}`;
 const pool = new Pool({ connectionString });

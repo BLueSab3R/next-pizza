@@ -1,0 +1,39 @@
+import { cn } from "../lib/utils";
+import { CountIconButton } from "./CountIconButton";
+
+export interface CountButtonProps {
+  value?: number;
+  size?: "sm" | "lg";
+  onClick?: (type: "plus" | "minus") => void;
+  className?: string;
+}
+
+export const CountButton = ({
+  className,
+  value,
+  size,
+  onClick,
+}: CountButtonProps) => {
+  return (
+    <div
+      className={cn(
+        className,
+        "inline-flex items-center justify-between gap-3"
+      )}
+    >
+      <CountIconButton
+        onClick={() => onClick?.("minus")}
+        disabled={value === 1}
+        size={size}
+        type="minus"
+      />
+      <b className={size === "sm" ? "text-sm" : "text-md"}>{value}</b>
+      <CountIconButton
+        onClick={() => onClick?.("plus")}
+        disabled={value === 2}
+        size={size}
+        type="plus"
+      />
+    </div>
+  );
+};
