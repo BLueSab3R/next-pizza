@@ -28,6 +28,24 @@ html {
   background: #dbdadd;
 }
 
+.scrollbar-cart::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar-cart::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 6px;
+}
+
+.scrollbar-cart::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border-radius: 6px;
+}
+
+.scrollbar-cart::-webkit-scrollbar-thumb:hover {
+  background: #909090;
+}
+
 @theme inline {
   --color-background: var(--background);
 
