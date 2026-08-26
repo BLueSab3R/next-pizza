@@ -10,93 +10,56 @@ import {
 } from "@/shared/ui/sheet";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { getCartItemDetail } from "../lib";
+import { useEffect } from "react";
+import { CartDrawerItem } from ".";
+import { PizzaSize, PizzaType } from "../constants/pizza";
+import { calcCartTotalPrice, getCartItemDetail } from "../lib";
+import { useCartStore } from "../store";
 import { Button } from "../ui";
-import { CartDrawerItem } from "./CartDrawerItem";
 
 interface Props {
   children: React.ReactNode;
   className?: string;
-  totalAmount?: number;
 }
 
-export const CartDrawer = ({ children, totalAmount }: Props) => {
+export const CartDrawer = ({ children }: Props) => {
+  const totalAmount = useCartStore((state) => state.totalAmount);
+  const fetchCartItems = useCartStore((state) => state.fetchCartItems);
+  const items = useCartStore((state) => state.items);
+  const totalPrice = calcCartTotalPrice(items);
+  useEffect(() => {
+    fetchCartItems();
+  }, [fetchCartItems]);
+
   return (
     <Sheet>
       <SheetTrigger asChild>{children}</SheetTrigger>
       <SheetContent className="flex flex-col justify-between pb-0 bg-[#f4f1ee]">
         <SheetHeader>
           <SheetTitle className="text-2xl">
-            In cart <span className="font-bold">3 item</span>
+            In cart <span className="font-bold">{totalAmount} item</span>
           </SheetTitle>
         </SheetHeader>
         <div className="scrollbar-cart overflow-auto">
-          <CartDrawerItem
-            id={1}
-            imageUrl="http://localhost:3000/_next/image?url=https%3A%2F%2Fpizzahut-images.futureordering.com%2Fimages%2Fproduct%2F4%2FFA35B15078575E1B43939C02B7EAC9E0D%2F760x706.jpg&w=640&q=75"
-            details={getCartItemDetail(2, 30, [
-              { name: "test" },
-              { name: "test2" },
-            ])}
-            name="Pepperoni Lovers"
-            price={1}
-            quantity={24}
-          />
-          <CartDrawerItem
-            id={1}
-            imageUrl="http://localhost:3000/_next/image?url=https%3A%2F%2Fpizzahut-images.futureordering.com%2Fimages%2Fproduct%2F4%2FFA35B15078575E1B43939C02B7EAC9E0D%2F760x706.jpg&w=640&q=75"
-            details={getCartItemDetail(2, 30, [
-              { name: "test" },
-              { name: "test2" },
-            ])}
-            name="Pepperoni Lovers"
-            price={1}
-            quantity={24}
-          />
-          <CartDrawerItem
-            id={1}
-            imageUrl="http://localhost:3000/_next/image?url=https%3A%2F%2Fpizzahut-images.futureordering.com%2Fimages%2Fproduct%2F4%2FFA35B15078575E1B43939C02B7EAC9E0D%2F760x706.jpg&w=640&q=75"
-            details={getCartItemDetail(2, 30, [
-              { name: "test" },
-              { name: "test2" },
-            ])}
-            name="Pepperoni Lovers"
-            price={1}
-            quantity={24}
-          />
-          <CartDrawerItem
-            id={1}
-            imageUrl="http://localhost:3000/_next/image?url=https%3A%2F%2Fpizzahut-images.futureordering.com%2Fimages%2Fproduct%2F4%2FFA35B15078575E1B43939C02B7EAC9E0D%2F760x706.jpg&w=640&q=75"
-            details={getCartItemDetail(2, 30, [
-              { name: "test" },
-              { name: "test2" },
-            ])}
-            name="Pepperoni Lovers"
-            price={1}
-            quantity={24}
-          />
-          <CartDrawerItem
-            id={1}
-            imageUrl="http://localhost:3000/_next/image?url=https%3A%2F%2Fpizzahut-images.futureordering.com%2Fimages%2Fproduct%2F4%2FFA35B15078575E1B43939C02B7EAC9E0D%2F760x706.jpg&w=640&q=75"
-            details={getCartItemDetail(2, 30, [
-              { name: "test" },
-              { name: "test2" },
-            ])}
-            name="Pepperoni Lovers"
-            price={1}
-            quantity={24}
-          />
-          <CartDrawerItem
-            id={1}
-            imageUrl="http://localhost:3000/_next/image?url=https%3A%2F%2Fpizzahut-images.futureordering.com%2Fimages%2Fproduct%2F4%2FFA35B15078575E1B43939C02B7EAC9E0D%2F760x706.jpg&w=640&q=75"
-            details={getCartItemDetail(2, 30, [
-              { name: "test" },
-              { name: "test2" },
-            ])}
-            name="Pepperoni Lovers"
-            price={1}
-            quantity={24}
-          />
+          {items.map((item) => (
+            <CartDrawerItem
+              id={item.id}
+              key={item.id}
+              imageUrl={item.imageUrl}
+              details={
+                item.pizzaSize && item.pizzaSize
+                  ? getCartItemDetail(
+                      item.pizzaType as PizzaType,
+                      item.pizzaSize as PizzaSize,
+                      item.ingredients
+                    )
+                  : ""
+              }
+              name={item.name}
+              price={item.totalPrice}
+              quantity={item.quantity}
+            />
+          ))}
         </div>
         <SheetFooter className=" bg-white p-8">
           <div>
@@ -105,7 +68,7 @@ export const CartDrawer = ({ children, totalAmount }: Props) => {
                 Total:
                 <div className="flex-1 border-b border-dashed border-b-neutral-200 relative -top-1 mx-2" />
               </span>
-              <span className="text-lg font-bold">{totalAmount || 20}$</span>
+              <span className="text-lg font-bold">{totalPrice}$</span>
             </div>
             <Link href="/cart">
               <Button type="submit" className="w-full h-12 text-base ">
