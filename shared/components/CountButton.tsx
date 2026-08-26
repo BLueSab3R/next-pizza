@@ -30,7 +30,6 @@ export const CountButton = ({
       <b className={size === "sm" ? "text-sm" : "text-md"}>{value}</b>
       <CountIconButton
         onClick={() => onClick?.("plus")}
-        disabled={value === 2}
         size={size}
         type="plus"
       />

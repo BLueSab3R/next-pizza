@@ -5,7 +5,7 @@ import { CountButtonProps } from "./CountButton";
 
 interface Props {
   size: CountButtonProps["size"];
-  disabled: boolean;
+  disabled?: boolean;
   type: "plus" | "minus";
   onClick: () => void;
   className?: string;
