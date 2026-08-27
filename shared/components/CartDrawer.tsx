@@ -13,7 +13,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { CartDrawerItem } from ".";
 import { PizzaSize, PizzaType } from "../constants/pizza";
-import { calcCartTotalPrice, getCartItemDetail } from "../lib";
+import { getCartItemDetail } from "../lib";
 import { useCartStore } from "../store";
 import { Button } from "../ui";
 
@@ -26,10 +26,20 @@ export const CartDrawer = ({ children }: Props) => {
   const totalAmount = useCartStore((state) => state.totalAmount);
   const fetchCartItems = useCartStore((state) => state.fetchCartItems);
   const items = useCartStore((state) => state.items);
-  const totalPrice = calcCartTotalPrice(items);
+  const stateUpdateQuantity = useCartStore((state) => state.updateItemQuantity);
+
   useEffect(() => {
     fetchCartItems();
   }, [fetchCartItems]);
+
+  const onClickCountButton = (
+    id: number,
+    quantity: number,
+    type: "plus" | "minus"
+  ) => {
+    const newQuantity = type === "plus" ? quantity + 1 : quantity - 1;
+    stateUpdateQuantity(id, newQuantity);
+  };
 
   return (
     <Sheet>
@@ -58,6 +68,9 @@ export const CartDrawer = ({ children }: Props) => {
               name={item.name}
               price={item.totalPrice}
               quantity={item.quantity}
+              onClickCountButton={(type) =>
+                onClickCountButton(item.id, item.quantity, type)
+              }
             />
           ))}
         </div>
@@ -68,7 +81,7 @@ export const CartDrawer = ({ children }: Props) => {
                 Total:
                 <div className="flex-1 border-b border-dashed border-b-neutral-200 relative -top-1 mx-2" />
               </span>
-              <span className="text-lg font-bold">{totalPrice}$</span>
+              <span className="text-lg font-bold">1$</span>
             </div>
             <Link href="/cart">
               <Button type="submit" className="w-full h-12 text-base ">
