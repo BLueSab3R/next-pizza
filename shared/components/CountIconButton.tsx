@@ -24,7 +24,7 @@ export const CountIconButton = ({
       disabled={disabled}
       onClick={onClick}
       className={cn(
-        "p-0 hover:bg-primary hover:text-white disabled:bg-white disabled:border-gray-400 disabled:text-gray-400",
+        "p-0 hover:bg-primary hover:text-white disabled:bg-white disabled:border-gray-400 disabled:text-gray-400 cursor-pointer disabled:cursor-not-allowed",
         size === "sm" ? "w-7.5 h-7.5 rounded-[10px]" : "w-9.5 h-9.5 rounded-md"
       )}
     >
