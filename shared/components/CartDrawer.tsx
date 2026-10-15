@@ -24,9 +24,11 @@ interface Props {
 
 export const CartDrawer = ({ children }: Props) => {
   const totalAmount = useCartStore((state) => state.totalAmount);
-  const fetchCartItems = useCartStore((state) => state.fetchCartItems);
   const items = useCartStore((state) => state.items);
+
   const stateUpdateQuantity = useCartStore((state) => state.updateItemQuantity);
+  const removeCartItem = useCartStore((state) => state.removeCartItem);
+  const fetchCartItems = useCartStore((state) => state.fetchCartItems);
 
   useEffect(() => {
     fetchCartItems();
@@ -47,7 +49,7 @@ export const CartDrawer = ({ children }: Props) => {
       <SheetContent className="flex flex-col justify-between pb-0 bg-[#f4f1ee]">
         <SheetHeader>
           <SheetTitle className="text-2xl">
-            In cart <span className="font-bold">{totalAmount} item</span>
+            In cart <span className="font-bold">{items.length} item</span>
           </SheetTitle>
         </SheetHeader>
         <div className="scrollbar-cart overflow-auto">
@@ -71,6 +73,7 @@ export const CartDrawer = ({ children }: Props) => {
               onClickCountButton={(type) =>
                 onClickCountButton(item.id, item.quantity, type)
               }
+              onClickRemoveButton={() => removeCartItem(item.id)}
             />
           ))}
         </div>
@@ -81,7 +84,7 @@ export const CartDrawer = ({ children }: Props) => {
                 Total:
                 <div className="flex-1 border-b border-dashed border-b-neutral-200 relative -top-1 mx-2" />
               </span>
-              <span className="text-lg font-bold">1$</span>
+              <span className="text-lg font-bold">{totalAmount}$</span>
             </div>
             <Link href="/cart">
               <Button type="submit" className="w-full h-12 text-base ">

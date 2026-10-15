@@ -1,5 +1,6 @@
 import { ArrowRight, ShoppingCart } from "lucide-react";
 import { cn } from "../lib/utils";
+import { useCartStore } from "../store";
 import { Button } from "../ui";
 import { CartDrawer } from "./index";
 
@@ -8,15 +9,8 @@ interface Props {
 }
 
 export const CartButton = ({ className }: Props) => {
-  // const { totalAmount, items, loading } = useCart();
-  const loading = true;
-  const totalAmount = 12;
-  const items = [
-    {
-      id: 1,
-      name: "test",
-    },
-  ];
+  const { totalAmount, items, loading } = useCartStore();
+
   return (
     <CartDrawer>
       <Button
@@ -26,7 +20,7 @@ export const CartButton = ({ className }: Props) => {
           className,
         })}
       >
-        <b>{totalAmount}</b>
+        <b>{totalAmount}$</b>
         <span className="h-full w-px bg-white/30 mx-2" />
         <div className="flex items-center gap-1 transition duration-300 group-hover:opacity-0">
           <ShoppingCart className="h-4 w-4 relative" strokeWidth={2} />
