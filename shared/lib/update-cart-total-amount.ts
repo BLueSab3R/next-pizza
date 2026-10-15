@@ -23,6 +23,7 @@ export const updateCartTotalAmount = async (token: string) => {
       },
     },
   });
+
   if (!userCart) {
     return NextResponse.json({
       message: "Error during getting your cart!",
@@ -34,12 +35,27 @@ export const updateCartTotalAmount = async (token: string) => {
     0
   );
 
-  await prisma.cart.update({
+  return await prisma.cart.update({
     where: {
       id: userCart.id,
     },
     data: {
       totalAmount,
+    },
+    include: {
+      items: {
+        orderBy: {
+          createdAt: "desc",
+        },
+        include: {
+          productItem: {
+            include: {
+              product: true,
+            },
+          },
+          ingredients: true,
+        },
+      },
     },
   });
 };

@@ -32,7 +32,6 @@ export const CountButton = ({
         onClick={() => onClick?.("plus")}
         size={size}
         type="plus"
-        disabled={value === 2}
       />
     </div>
   );
