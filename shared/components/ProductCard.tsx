@@ -24,7 +24,7 @@ export const ProductCard = ({
   className,
 }: Props) => {
   return (
-    <div className={cn("h-full", className)}>
+    <div className={cn("h-full", className, "flex flex-col h-full")}>
       <Link href={`/product/${id}`} className="flex flex-col h-full">
         <div className="flex justify-center h-65">
           <Image
@@ -39,16 +39,20 @@ export const ProductCard = ({
         <p className="text-sm text-gray-400">
           {ingredients.map((ingredient) => ingredient.name).join(", ")}
         </p>
-        <div className="flex justify-between items-center mt-auto">
-          <span className="text-[20px]">
-            from <b>{price}$</b>
-          </span>
-          <Button variant="secondary" className="text-base font-bold">
-            <Plus size={20} className=" mr-1" />
-            Add
-          </Button>
-        </div>
       </Link>
+
+      <div className="flex justify-between items-center">
+        <span className="text-[20px]">
+          from <b>{price}$</b>
+        </span>
+        <Button
+          variant="secondary"
+          className="cursor-pointer text-base font-bold"
+        >
+          <Plus size={20} className=" mr-1" />
+          Add
+        </Button>
+      </div>
     </div>
   );
 };
