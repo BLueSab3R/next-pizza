@@ -10,22 +10,41 @@ const pool = new Pool({ connectionString });
 const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
-const randomNumber = (min: number, max: number) => {
-  return Math.floor(Math.random() * (max - min) * 2 + min * 2) / 2;
+interface PriceCalc {
+  basePrice?: number;
+  size?: 20 | 30 | 40;
+  pizzaType?: 1 | 2;
+}
+
+const calculateTotalPrice = ({
+  basePrice = 10,
+  size,
+  pizzaType,
+}: PriceCalc) => {
+  let price = basePrice;
+
+  if (size === 30) price += 4;
+  if (size === 40) price += 8;
+
+  if (pizzaType === 2) price + 2;
+
+  return price;
 };
 
 const generateProductItem = ({
   productId,
   pizzaType,
+  basePrice = 10,
   size,
 }: {
   productId: number;
   pizzaType?: 1 | 2;
   size?: 20 | 30 | 40;
+  basePrice: number;
 }): Prisma.ProductItemUncheckedCreateInput => {
   return {
     productId,
-    price: randomNumber(5, 25),
+    price: calculateTotalPrice({ basePrice, size, pizzaType }),
     pizzaType,
     size,
   };
