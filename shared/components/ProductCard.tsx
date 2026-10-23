@@ -47,7 +47,7 @@ export const ProductCard = ({
         </span>
         <Button
           variant="secondary"
-          className="cursor-pointer text-base font-bold"
+          className="cursor-pointer text-base font-bold select-none"
         >
           <Plus size={20} className=" mr-1" />
           Add
