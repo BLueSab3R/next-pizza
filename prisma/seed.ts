@@ -10,41 +10,27 @@ const pool = new Pool({ connectionString });
 const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
-interface PriceCalc {
-  basePrice?: number;
-  size?: 20 | 30 | 40;
-  pizzaType?: 1 | 2;
-}
-
-const calculateTotalPrice = ({
-  basePrice = 10,
-  size,
-  pizzaType,
-}: PriceCalc) => {
-  let price = basePrice;
-
-  if (size === 30) price += 4;
-  if (size === 40) price += 8;
-
-  if (pizzaType === 2) price + 2;
-
-  return price;
+const generatePrice = (pizzaType?: 1 | 2, size?: 20 | 30 | 40) => {
+  const basePrice = 5;
+  let totalPrice = basePrice;
+  if (size === 30) totalPrice += 3.5;
+  if (size === 40) totalPrice += 7.0;
+  if (pizzaType === 2) totalPrice += 1.0;
+  return totalPrice;
 };
 
 const generateProductItem = ({
   productId,
   pizzaType,
-  basePrice = 10,
   size,
 }: {
   productId: number;
   pizzaType?: 1 | 2;
   size?: 20 | 30 | 40;
-  basePrice: number;
 }): Prisma.ProductItemUncheckedCreateInput => {
   return {
     productId,
-    price: calculateTotalPrice({ basePrice, size, pizzaType }),
+    price: generatePrice(pizzaType, size),
     pizzaType,
     size,
   };
@@ -183,69 +169,27 @@ async function up() {
         size: 40,
       }),
 
-      generateProductItem({
-        productId: 1,
-      }),
-      generateProductItem({
-        productId: 2,
-      }),
-      generateProductItem({
-        productId: 3,
-      }),
-      generateProductItem({
-        productId: 4,
-      }),
-      generateProductItem({
-        productId: 5,
-      }),
-      generateProductItem({
-        productId: 6,
-      }),
-      generateProductItem({
-        productId: 7,
-      }),
-      generateProductItem({
-        productId: 8,
-      }),
-      generateProductItem({
-        productId: 9,
-      }),
-      generateProductItem({
-        productId: 10,
-      }),
-      generateProductItem({
-        productId: 11,
-      }),
-      generateProductItem({
-        productId: 12,
-      }),
-      generateProductItem({
-        productId: 13,
-      }),
-      generateProductItem({
-        productId: 14,
-      }),
-      generateProductItem({
-        productId: 15,
-      }),
-      generateProductItem({
-        productId: 16,
-      }),
-      generateProductItem({
-        productId: 17,
-      }),
-      generateProductItem({
-        productId: 18,
-      }),
-      generateProductItem({
-        productId: 19,
-      }),
-      generateProductItem({
-        productId: 20,
-      }),
-      generateProductItem({
-        productId: 21,
-      }),
+      { productId: 1, price: 4.5 },
+      { productId: 2, price: 3.0 },
+      { productId: 3, price: 6.5 },
+      { productId: 4, price: 2.5 },
+      { productId: 5, price: 12.0 },
+      { productId: 6, price: 3.5 },
+      { productId: 7, price: 4.0 },
+      { productId: 8, price: 5.5 },
+      { productId: 9, price: 2.0 },
+      { productId: 10, price: 7.0 },
+      { productId: 11, price: 4.5 },
+      { productId: 12, price: 3.0 },
+      { productId: 13, price: 8.5 },
+      { productId: 14, price: 9.0 },
+      { productId: 15, price: 2.5 },
+      { productId: 16, price: 4.0 },
+      { productId: 17, price: 3.5 },
+      { productId: 18, price: 6.0 },
+      { productId: 19, price: 5.0 },
+      { productId: 20, price: 2.5 },
+      { productId: 21, price: 3.0 },
     ],
   });
 
