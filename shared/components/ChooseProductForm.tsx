@@ -7,20 +7,20 @@ interface Props {
   imageUrl: string;
   name: string;
   items?: [];
+  price: number;
   description?: string;
-  onClickAdd?: VoidFunction;
-  className: string;
+  onSubmit: VoidFunction;
+  className?: string;
 }
 
 export const ChooseProductForm = ({
   imageUrl,
   name,
+  price,
   description,
-  items,
-  onClickAdd,
   className,
+  onSubmit,
 }: Props) => {
-  const totalPrice = 120;
   return (
     <div className={cn(className, "flex flex-1")}>
       <div className="flex items-center justify-center flex-1 relative w-full">
@@ -35,8 +35,11 @@ export const ChooseProductForm = ({
       <div className="bg-[#f7f6f5] w-122.5 p-7">
         <Title text={name} size="md" className="font-extrabold mb-1" />
         <p className="text-gray-400">{description}</p>
-        <Button className="h-13.75 px-10 text-base rounded-[18px] w-full mt-10">
-          Add to cart for {totalPrice}
+        <Button
+          onClick={onSubmit}
+          className="h-13.75 px-10 text-base rounded-[18px] w-full mt-10"
+        >
+          Add to cart for {price}$
         </Button>
       </div>
     </div>

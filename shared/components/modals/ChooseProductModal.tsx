@@ -2,6 +2,7 @@
 
 import { ChoosePizzaForm, ChooseProductForm } from "@/shared/components/index";
 import { cn } from "@/shared/lib/utils";
+import { useCartStore } from "@/shared/store";
 import { Dialog } from "@/shared/ui";
 import {
   DialogContent,
@@ -18,7 +19,18 @@ interface Props {
 
 export const ChooseProductModal = ({ product, className }: Props) => {
   const router = useRouter();
-  const isPizzaForm = Boolean(product.variations[0].pizzaType);
+  const firstItem = product.variations[0];
+  const isPizzaForm = Boolean(firstItem.pizzaType);
+  const addCartItem = useCartStore((state) => state.addCartItem);
+
+  const onAddProduct = () => {
+    addCartItem({ productItemId: firstItem.id });
+  };
+
+  const onAddPizza = (productItemId: number, ingredientsId: number[]) => {
+    addCartItem({ productItemId, ingredientsId });
+  };
+
   return (
     <Dialog onOpenChange={() => router.back()} open={Boolean(product)}>
       <DialogContent
@@ -37,12 +49,15 @@ export const ChooseProductModal = ({ product, className }: Props) => {
             description={product.description || ""}
             ingredients={product.ingredients}
             variations={product.variations}
+            onSubmit={onAddPizza}
           />
         ) : (
           <ChooseProductForm
             imageUrl={product.imageUrl}
             name={product.name}
+            price={firstItem.price}
             description={product.description || ""}
+            onSubmit={onAddProduct}
           />
         )}
         <DialogTitle className="sr-only">{product.name}</DialogTitle>
