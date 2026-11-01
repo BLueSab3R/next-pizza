@@ -10,6 +10,7 @@ import {
   ProductItem,
 } from "@prisma/client";
 import crypto from "crypto";
+import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
 export type CartItemDTO = CartItem & {
@@ -63,20 +64,21 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
-    let token = req.cookies.get("cartToken")?.value;
+    let cookieStore = await cookies();
+    let token = cookieStore.get("cartToken")?.value;
     if (!token) {
       token = crypto.randomUUID();
+      cookieStore.set("cartToken", token);
     }
-
     const userCart = await findOrCreateCart(token);
-
+    console.log("USER CART from api", userCart);
     const data = (await req.json()) as CreateCartItemValues;
 
     const findCartItem = await prisma.cartItem.findFirst({
       where: {
         cartId: userCart.id,
         productItemId: data.productItemId,
-        ingredients: { every: { id: { in: data.ingredients } } },
+        ingredients: { every: { id: { in: data.ingredientsId } } },
       },
     });
 
@@ -89,11 +91,24 @@ export async function POST(req: NextRequest) {
           quantity: findCartItem.quantity + 1,
         },
       });
-
-      const updatedUserCart = await updateCartTotalAmount(token);
-
-      return NextResponse.json(updatedUserCart);
+    } else {
+      await prisma.cartItem.create({
+        data: {
+          cartId: userCart.id,
+          productItemId: data.productItemId,
+          quantity: 1,
+          ingredients: {
+            connect: data.ingredientsId?.map((id) => ({ id })),
+          },
+        },
+      });
     }
+
+    const updatedUserCart = await updateCartTotalAmount(token);
+
+    const resp = NextResponse.json(updatedUserCart);
+
+    return resp;
   } catch (err) {
     console.error("[CART_POST] Error during fetching:", err);
     return NextResponse.json({
