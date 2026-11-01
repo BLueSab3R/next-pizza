@@ -1,7 +1,6 @@
 import { Trash2Icon } from "lucide-react";
 import { cn } from "../lib/utils";
 import { CartItemsProps } from "./cart-items/cart-items-details.types";
-import {} from "./cart-items/CartItemInfo";
 import * as CartItem from "./cart-items/index";
 import { CountButton } from "./CountButton";
 
