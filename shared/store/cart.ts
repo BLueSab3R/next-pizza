@@ -1,4 +1,5 @@
 import { Api } from "@/services/api-clients";
+import { CreateCartItemValues } from "@/services/dto/cart.dto";
 import { create } from "zustand";
 import { getCartDetails } from "../lib";
 
@@ -32,7 +33,7 @@ export interface CartState {
   removeCartItem: (id: number) => Promise<void>;
 }
 
-export const useCartStore = create<CartState>((set, get) => ({
+export const useCartStore = create<CartState>((set) => ({
   items: [],
   error: false,
   loading: true,
@@ -71,5 +72,15 @@ export const useCartStore = create<CartState>((set, get) => ({
       set({ loading: false });
     }
   },
-  addCartItem: async (id: number) => {},
+  addCartItem: async (values: CreateCartItemValues) => {
+    try {
+      set({ loading: true, error: false });
+      const data = await Api.cart.addCartItem(values);
+      set(getCartDetails(data));
+    } catch (error) {
+      set({ error: true });
+    } finally {
+      set({ loading: false });
+    }
+  },
 }));
